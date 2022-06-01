@@ -1,0 +1,29 @@
+@use 'colors';
+@use 'themes';
+
+html {
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    text-transform: lowercase;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    position: relative;
+}
+
+section, nav {
+    padding: 2.5rem 1rem;
+}
+
+
+canvas {
+    position: fixed;
+}
+
+.canvas-container {
+    position: fixed !important;
+    z-index: -3;
+    height: 100%;
+    width: 100%;
+}

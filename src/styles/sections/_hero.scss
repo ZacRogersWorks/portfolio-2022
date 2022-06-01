@@ -1,0 +1,35 @@
+@use '../base/colors';
+@use '../base/themes';
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding-top: 15rem;
+    scroll-snap-align: center;
+
+
+
+    span {
+        margin-top: -8px;
+    }
+
+    .darkmode-toggle {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .hero {
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+
+        .hero-rule {
+            height: 100%;
+            border-right: 1px solid var(--color-text);
+        }
+    }
+
+}
+

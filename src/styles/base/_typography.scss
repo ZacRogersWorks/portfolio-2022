@@ -1,0 +1,70 @@
+@use 'themes';
+
+@font-face {
+    font-family: "kayak";
+    src: url("../fonts/kayak_sans_regular-webfont.woff2");
+}
+
+@font-face {
+    font-family: "kayak";
+    src: url("../fonts/kayak_sans_regular_italic-webfont.woff2");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "kayak";
+    src: url("../fonts/kayak_sans_bold-webfont.woff2");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "kayak";
+    src: url("../fonts/kayak_sans_bold_italic-webfont.woff2");
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "kayak";
+    src: url("../fonts/kayak_sans_light-webfont.woff2");
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: "kayak";
+    src: url("../fonts/kayak_sans_light_italic-webfont.woff2");
+    font-weight: lighter;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'space mono';
+    src: url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+}
+
+h1 {
+    font-family: kayak, sans-serif;
+    font-weight: bold;
+    font-size: 64px;
+}
+
+.tagline {
+    font-family: kayak, sans-serif;
+    font-weight: lighter;
+}
+
+h2 {
+    font-size: 2rem;
+    font-family: kayak, sans-serif;
+    font-weight: bold;
+    letter-spacing: 6px;
+    color: var(--color-text);
+    padding: none;
+    margin: none;
+}
+
+p {
+    text-transform: none;
+    font-family: 'space mono', sans-serif;
+    font-size: 1rem;
+}

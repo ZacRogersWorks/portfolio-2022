@@ -1,0 +1,134 @@
+@use '../base/themes';
+@use '../base/typography';
+
+.contact-section {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: center;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    font-family: space mono, sans-serif;
+
+    span {
+        font-family: kayak, sans-serif;
+        font-size: 1.5rem;
+    }
+}
+
+.contact-form-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+        margin-bottom: 2rem;
+    }
+}
+
+.contact-form {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .input-container {
+        position: relative;
+        margin-bottom: 1.5rem;
+
+        &input+label, input+label {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+            font-family: kayak, sans-serif;
+            font-size: 1.5rem;
+            font-weight: lighter;
+            border-radius: 8px;
+            transition: all .2s ease-in-out;
+        }
+
+        &textarea+label, textarea+label {
+            position: absolute;
+            top: .5rem;
+            left: 1rem;
+            border-radius: 8px;
+            font-family: kayak, sans-serif;
+            font-size: 1.5rem;
+            font-weight: lighter;
+            transition: all .2s ease-in-out;
+        }
+
+        & input:focus~label,
+        input:not(:placeholder-shown)~label,
+        textarea:not(:placeholder-shown)~label,
+        textarea:focus~label {
+            position: absolute;
+            top: -22px;
+            left: 0;
+            background-color: black;
+            color:white;
+            border-radius: 8px;
+            padding: 2px 12px;
+            z-index: 5;
+            transform: scale(0.6);
+        }
+
+        & textarea:not(:placeholder-shown)~label,
+        textarea:focus~label{
+            position: absolute;
+            top: -22px;
+            left: -8px;
+            background-color: black;
+            color:white;
+            border-radius: 8px;
+            padding: 2px 12px;
+            z-index: 5;
+            transform: scale(0.6);;
+        }
+    }
+
+    input, textarea {
+        width: 100%;
+        border: 1px solid var(--color-text);
+        background: none;
+        border-radius: 16px;
+        padding: 12px 1rem;
+        font-family: kayak, sans-serif;
+        font-size: 1.5rem;
+        color: var(--color-text);
+    }
+
+    input {
+        height: 3.5rem;
+    }
+
+    textarea {
+        height: 9rem;
+    }
+
+    button {
+        align-self: flex-end;
+        padding: 8px;
+        width: 50%;
+        background-color: white;
+        border: none;
+        border-radius: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        mix-blend-mode: screen;
+        color: black;
+        font-family: kayak, sans-serif;
+        text-transform: lowercase;
+        font-size: 1.5rem;
+        letter-spacing: .25rem;
+        cursor: pointer;
+
+        svg {
+            margin-left: 1rem;
+        }
+    }
+}

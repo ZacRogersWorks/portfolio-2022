@@ -1,0 +1,33 @@
+@use '../base/themes';
+
+.work-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.work-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    text-align: end;
+
+    a {
+        font-family: kayak, sans-serif;
+        font-size: 3rem;
+        text-decoration: none;
+        color: var(--color-text);
+    }
+
+    .work-list-link-container {
+        position: relative;
+
+        p {
+            position: absolute;
+            top: 0;
+            left: -1.5rem;
+        }
+    }
+    
+}

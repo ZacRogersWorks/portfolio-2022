@@ -1,0 +1,13 @@
+@use 'colors' as c;
+
+body {
+    --color-text: #{c.$dark};
+    --color-background: #{c.$light};
+    --color-menu: #{c.$dark};
+}
+
+body.dark-mode {
+    --color-text: #{c.$light};
+    --color-background: #{c.$dark};
+    --color-menu: #{c.$light};
+}

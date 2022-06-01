@@ -1,0 +1,21 @@
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.social-links {
+
+
+    a {color: var(--color-text);}
+    
+    :first-child {
+        margin-right: .5rem;
+    }
+}
+
+.copyright, .credits {
+    font-size: 12px;
+    color: var(--color-text);
+}
