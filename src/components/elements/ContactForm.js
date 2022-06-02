@@ -3,7 +3,7 @@ import React from 'react'
 const ContactForm = () => {
     return (
         <div className="contact-form-container">
-            <p>Send me a message to discuss a project, collaborate, or just to nerd out.</p>
+            <p>Send me a message to discuss a project or just to nerd out.</p>
             <form
                 name="ZacRogers.Works"
                 data-netlify="true"
