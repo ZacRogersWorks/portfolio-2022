@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Controls } from 'react-three-gui'
 import { useSiteContext } from '../context/SiteContext'
-
+import { Canvas } from '@react-three/fiber'
 import HeroScene from './HeroScene'
 import AboutScene from './AboutScene'
 import WorkScene from './WorkScene'
@@ -21,11 +20,10 @@ export default function Background() {
 
     return (
         <div className="canvas-container">
-            <Controls.Provider>
-                <Controls.Canvas >
+                <Canvas >
                     {currentSection}
-                </Controls.Canvas>
-            </Controls.Provider>
+                </Canvas>
+
         </div>
     )
 }
