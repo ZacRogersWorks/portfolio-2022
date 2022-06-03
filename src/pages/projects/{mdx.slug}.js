@@ -4,7 +4,8 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const Project = ({ data }) => {
-  // const image = getImage(data.mdx.frontmatter.featuredImage.childImageSharp.gatsbyImageData)
+  const image = getImage(data.mdx.frontmatter.featuredImage.childImageSharp.gatsbyImageData)
+
   useEffect(() => {
     console.log('PROJECT', data.mdx.frontmatter)
   }, [])
@@ -21,7 +22,7 @@ const Project = ({ data }) => {
         <p>{data.mdx.frontmatter.date}</p>
         <p>{data.mdx.frontmatter.url}</p>
         <p>{data.mdx.frontmatter.repo}</p>
-        {/* <GatsbyImage src={image} /> */}
+        <GatsbyImage image={image} alt="Product mockups"/>
         <MDXRenderer>
           {data.mdx.body}
         </MDXRenderer>
@@ -39,6 +40,11 @@ query ($id: String) {
         url
         date(formatString: "YYYY")
         description
+        featuredImage {
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED, width: 720)
+          }
+        }
       }
       body
       slug
