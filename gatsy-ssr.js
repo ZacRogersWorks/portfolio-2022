@@ -8,3 +8,9 @@ export const wrapRootElement = ({ element }) => {
         </SiteContextProvider>
     )
 }
+
+export const wrapPageElement = ({ element }) => {
+    return (
+        <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
+    )
+}
