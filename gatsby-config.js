@@ -33,7 +33,7 @@ module.exports = {
       },
       __key: "work"
     },
-    'gatsby-plugin-layout',
+    // 'gatsby-plugin-layout',
     `gatsby-plugin-sass`,
     `gatsby-plugin-anchor-links`,
   ]

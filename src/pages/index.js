@@ -10,7 +10,7 @@ import { useSiteContext } from "../components/context/SiteContext";
 import '../styles/styles.scss'
 
 //Components
-import Background from '../components/three/Background'
+import Layout from '../layouts/Layout'
 import Hero from '../components/sections/Hero'
 import TransitionOverlay from "../components/elements/TransitionOverlay";
 import About from '../components/sections/About'
@@ -21,11 +21,12 @@ const Home = () => {
 
   return (
     <div>
-      {/* <Background  section={section.visibleSection} /> */}
-      <TransitionOverlay />
-      <Hero ref={section.refs.hero} />
-      <About ref={section.refs.about} />
-      <Work ref={section.refs.work} />
+      <Layout>
+        <TransitionOverlay />
+        <Hero ref={section.refs.hero} />
+        <About ref={section.refs.about} />
+        <Work ref={section.refs.work} />
+      </Layout>
     </div>
   )
 }
