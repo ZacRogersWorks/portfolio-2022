@@ -4,6 +4,7 @@ import numberToWords from 'number-to-words'
 import { Link } from 'gatsby'
 
 const WorkList = () => {
+    
     const queryList = useWorkListQuery()
     const workList = queryList.allMdx.nodes
 
@@ -14,7 +15,7 @@ const WorkList = () => {
                     <li key={project.id}>
                         <div className="work-list-link-container">
                             <p className="project-year">{"'" + project.frontmatter.date.slice(2, 4)}</p>
-                            <Link to={`projects/${project.slug}`} >Project {numberToWords.toWords(i + 1)}</Link>
+                            <Link to={`projects/${project.slug}` } >Project {numberToWords.toWords(i + 1)}</Link>
                         </div>
                         {/* <p className="project-description">{project.frontmatter.description}</p> */}
                     </li>

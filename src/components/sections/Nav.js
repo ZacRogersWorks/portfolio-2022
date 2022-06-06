@@ -6,13 +6,11 @@ import { useSiteContext } from '../context/SiteContext'
 import Menu from '../elements/Menu'
 
 const Nav = (props) => {
-
     const currentContext = useSiteContext()
     const [showLogo, setShowLogo] = useState('block')
     const [logoSrc, setLogoSrc] = useState(props.data.allImageSharp.nodes[0].gatsbyImageData)
     
     useEffect(() => {
-        console.log(props.data)
         if (currentContext.darkMode) {
             setLogoSrc(props.data.allImageSharp.nodes[1].gatsbyImageData)
         } else {
@@ -21,10 +19,10 @@ const Nav = (props) => {
     }, [currentContext.darkMode])
 
     useEffect(()=> {
-        if (currentContext.section.visibleSection !== 'hero') {
-            setShowLogo('none');
-        } else {
+        if (currentContext.section.visibleSection == 'hero') {
             setShowLogo('block');
+        } else {
+            setShowLogo('none');
         }
     }, [currentContext.section.visibleSection])
 

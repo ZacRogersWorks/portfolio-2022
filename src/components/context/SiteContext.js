@@ -1,10 +1,5 @@
 import React, { useEffect, useState, createContext, useContext } from 'react'
-import { useInView, InView } from 'react-intersection-observer'
-
-// const defaultState = {
-//   darkMode: false,
-//   darkModeToggle: () => {}
-// }
+import { useInView } from 'react-intersection-observer'
 
 const SiteContext = createContext()
 
@@ -34,7 +29,9 @@ const SiteContextProvider = ({children}) => {
     }
   }
 
+
   useEffect(() => {
+    console.log("IN VIEW", visibleSection)
     if (heroInView) setVisibleSection("hero")
     if (aboutInView) setVisibleSection("about")
     if (workInView) setVisibleSection("work")
@@ -51,7 +48,7 @@ const SiteContextProvider = ({children}) => {
           hero,
           about,
           work,
-          contact
+          contact,
         }
       }
     }}>
