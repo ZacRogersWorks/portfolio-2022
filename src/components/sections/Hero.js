@@ -14,7 +14,7 @@ const Hero = forwardRef((props, ref) => {
                 className="darkmode-toggle"
                 initial={{ x: -80 }}
                 animate={{ x: 0 }}
-                transition={{ duration: .8, delay: .7, ease: "easeOut"}}
+                transition={{ duration: .8, delay: 1, ease: "easeOut"}}
             >
                 <Toggle />
             </motion.div>

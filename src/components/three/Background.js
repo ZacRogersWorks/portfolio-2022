@@ -8,7 +8,7 @@ import WorkScene from './WorkScene'
 import { setQuaternionFromProperEuler } from 'three/src/math/MathUtils'
 
 const loaderColors = {
-    light:"linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(39,58,95,1) 34%, rgba(255,255,255,1) 74%, rgba(203,246,255,1) 100%)",
+    light:"linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(39,58,95,1) 34%, rgba(230,230,230,1) 51%, rgba(74,94,134,1) 100%)",
     dark: "linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(39,58,95,1) 34%, rgba(249,145,66,1) 78%, rgba(203,246,255,1) 100%)"
 }
 

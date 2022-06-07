@@ -11,12 +11,12 @@
         display: flex;
         flex-direction: column;
         justify-content: stretch;
-
-        .about-vertical-rule {
-            height: 100%;
-            border-left: solid 1px var(--color-text);
-            margin: 1rem 0;
-            transform-origin: top;
-        }
     }
+}
+
+.about-vertical-rule {
+    height: 100%;
+    border-left: solid 1px var(--color-text);
+    margin: 1rem 0;
+    transform-origin: top;
 }

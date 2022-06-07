@@ -1,6 +1,21 @@
 @use '../base/themes';
 
+
+.work-section{
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: center;
+    z-index: 2;
+}
+
 .work-container {
+    height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+}
+
+.work-items-container {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
