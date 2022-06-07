@@ -36,7 +36,6 @@ const AboutScene = ({darkMode, section}) => {
             <Float rotationIntensity={.2} floatIntensity={.1}>
                 <PerspectiveCamera makeDefault position={[0, 0, 20]} fov={50} near={1} far={20000} />
             </Float>
-            <Suspense fallback={null}>
                {(section == 'about') ? <Model /> : null}
                 {
                     bubbles.filter(bubble => !!bubble ).map(bubble => {
@@ -44,7 +43,6 @@ const AboutScene = ({darkMode, section}) => {
                     })
                 }
                 <Gradient darkMode={darkMode} />
-            </Suspense>
         </scene>
     )
 }
