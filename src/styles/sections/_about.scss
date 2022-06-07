@@ -5,14 +5,18 @@
     width: 100%;
     scroll-snap-align: center;
     z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
 
-    .about-vertical-rule {
+    .about-container {
         height: 100%;
-        border-left: solid 1px var(--color-text);
-        margin: 1rem 0;
-    }
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
 
+        .about-vertical-rule {
+            height: 100%;
+            border-left: solid 1px var(--color-text);
+            margin: 1rem 0;
+            transform-origin: top;
+        }
+    }
 }

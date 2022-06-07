@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import { motion } from 'framer-motion'
 
 import Toggle from '../elements/Toggle'
-import { titleVariants } from '../../variants/heroVariants'
+import { MOTION_VARIANTS } from '../../variants/MOTION_VARIANTS'
 
 
 const Hero = forwardRef((props, ref) => {
@@ -14,29 +14,29 @@ const Hero = forwardRef((props, ref) => {
                 className="darkmode-toggle"
                 initial={{ x: -80 }}
                 animate={{ x: 0 }}
-                transition={{ duration: .5, delay: .7, ease: "easeOut"}}
+                transition={{ duration: .8, delay: .7, ease: "easeOut"}}
             >
                 <Toggle />
             </motion.div>
             <motion.div className="hero"
-                variants={titleVariants}
+                variants={MOTION_VARIANTS.hero}
                 initial="initial"
                 animate="animate"
             >
                 <motion.h1
-                    variants={titleVariants}
+                    variants={MOTION_VARIANTS.hero}
                 >
                     Zac Rogers
                 </motion.h1>
                 <motion.span className='tagline'
-                    variants={titleVariants}
+                    variants={MOTION_VARIANTS.hero}
                 >
                     Creative Developer
                 </motion.span>
                 <motion.div className="hero-rule"
                     initial={{ opacity: .01, scaleY: .01 }}
                     animate={{ opacity: 1, scaleY: 1 }}
-                    transition={{ ease: "easeOut", duration: 1.5, delay: .7 }}
+                    transition={{ ease: "easeOut", duration: 1.5, delay: .5 }}
                 ></motion.div>
             </motion.div>
         </section>
