@@ -10,10 +10,8 @@ const HeroScene = (props) => {
             <Float rotationIntensity={.2} floatIntensity={.1}>
                 <PerspectiveCamera makeDefault position={[0, 5, 100]} fov={110} rotation={[0, -80 * (Math.PI / 180), 0]} near={1} far={20000} />
             </Float>
-            <Suspense fallback={null}>
                 <Ocean />
                 <Environment files={props.darkMode ? '/nebula.hdr' : '/sky.hdr'} resolution={1024} background />
-            </Suspense>
         </scene>
     )
 }
