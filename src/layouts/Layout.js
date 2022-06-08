@@ -10,14 +10,14 @@ const Layout = ({ children }) => {
   const { section } = useSiteContext()
 
   return (
-    <>
+    <div className="wrapper">
       <Background />
       <div className="page-container">
         <Nav />
         <main>{children}</main>
         <Contact ref={section.refs.contact} />
       </div>
-    </>
+    </div >
   )
 }
 

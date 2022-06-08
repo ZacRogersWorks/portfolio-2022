@@ -1,5 +1,6 @@
 @use '../base/themes';
 @use '../base/typography';
+@use '../base/breakpoints';
 
 .contact-section {
     height: 100vh;
@@ -138,6 +139,53 @@
 
         svg {
             margin-left: 1rem;
+        }
+    }
+}
+
+.contact-content-container {
+    display: flex;
+
+    .social-links {
+        display: none;
+    }
+}
+
+@include breakpoints.md {
+
+    .contact-content-container {
+        justify-content: space-between;
+        align-items: center;
+
+        .social-links {
+            display: block;
+        }
+    }
+    .contact-form-container {
+        width: 66%;
+        align-self: flex-end;
+    }
+}
+
+@include breakpoints.lg {
+    .contact-form-container {
+        width: 50%;
+    }
+
+    .contact-container {
+        justify-content: space-between;
+    }
+
+    .contact-content-container {
+        a > svg {
+            height: 48px;
+            width: 48px;
+        }
+
+        .social-links {
+            :not(:last-child) {
+                margin-right: 2rem;
+            }
         }
     }
 }
