@@ -1,5 +1,6 @@
 @use '../base/colors';
 @use '../base/themes';
+@use '../base/breakpoints';
 
 .hero-section {
     height: 100vh;
@@ -32,4 +33,18 @@
         }
     }
 
+}
+
+@include breakpoints.sm {
+
+    .hero {
+        h1 {
+            font-size: 7rem;
+        }
+
+        span {
+            margin-top: -1rem;
+            font-size: 1.5rem;
+        }
+    }
 }

@@ -1,5 +1,6 @@
 @use 'colors';
 @use 'themes';
+@use 'breakpoints';
 
 html {
     scroll-snap-type: y mandatory;
@@ -16,9 +17,21 @@ section, nav {
     padding: 2.5rem 0;
 }
 
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
 .page-container {
     position: relative;
     padding: 2.5rem 1rem;
+    max-width: 1536px;
+}
+
+@include breakpoints.sm {
+    .page-container {
+        padding: 4rem 3rem;
+    }
 }
 
 

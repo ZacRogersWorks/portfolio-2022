@@ -1,3 +1,5 @@
+@use '../base/breakpoints';
+
 .footer-links {
     margin: 1rem 0;
     display: flex;
@@ -23,4 +25,12 @@
 
 .privacy {
     margin-left: 8px;
+}
+
+@include breakpoints.md {
+    .footer-links {
+        .social-links {
+            display: none;
+        }
+    }
 }
