@@ -1,3 +1,5 @@
+@use '../base/breakpoints';
+
 .project-section_frontmatter {
     height: 100vh;
     scroll-snap-align: center;
@@ -9,7 +11,7 @@
 }
 
 .project-title {
-    margin-top: 8rem;
+    margin-top: 10rem;
     text-align: right;
 
     h1 {
@@ -29,14 +31,10 @@
     display: flex;
     flex-direction: column;
     justify-content: stretch;
-    padding: 8rem 0 2.5rem 0;
+    padding: 2rem 0 2.5rem 0;
 
     h2 {
         letter-spacing: 6px;
-    }
-
-    p:first-of-type {
-        width: 70%;
     }
 
     p:not(:last-child) {
@@ -47,6 +45,12 @@
 .project-vert-rule {
     height: 100%;
     border-right: 1px solid var(--color-text);
+}
+
+.project-body-vert-rule {
+    // margin-top: calc(40px + 48px - 32px);
+    height: 100%;
+    border-left: 1px solid var(--color-text);
 }
 
 .project-links {
@@ -61,10 +65,51 @@
 }
 
 .project-image {
-    width: 90%;
+    width: 100%;
+    max-width: 960px;
     height: auto;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -30%)
+}
+
+@include breakpoints.sm {
+    .project-section_body {
+        h2 {
+            font-size: 3rem;
+        }
+    }
+
+    // .project-body-vert-rule {
+    //     margin-top: calc(64px + 48px - 32px);
+    // }
+}
+
+@include breakpoints.md {
+    .project-section_body {
+        max-width: 60%;
+    }
+
+    .project-links {
+        font-size: 1.5rem;
+    }
+
+    .project-image {
+        top: 30%;
+        transform: translateX(-50%);
+    }
+}
+
+@include breakpoints.lg {
+    .project-image {
+        top: 20%;
+    }
+}
+
+@include breakpoints.xl {
+    .project-image {
+        top: 50%;
+        transform: translate(-50%, -35%)
+    }
 }
