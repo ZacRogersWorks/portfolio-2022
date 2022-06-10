@@ -14,7 +14,7 @@ export const shouldUpdateScroll = ({
     routerProps: { location },
     getSavedScrollPosition
 }) => {
-    const TRANSITION_DELAY = .3 * 1000 * 2
+    const TRANSITION_DELAY = 1000
 
     if (location.action === "PUSH") {
         window.setTimeout(() => window.scrollTo(0,0), TRANSITION_DELAY)
