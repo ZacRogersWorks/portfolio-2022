@@ -28,6 +28,26 @@ export const MOTION_VARIANTS = {
             }
         }
     },
+    work: {
+        initial: {
+            opacity: 0
+        },
+        animate: {
+            opacity: 1,
+            transition: {
+                duration: 1,
+                staggerChildren: .1,
+                when: "beforeChildren",
+                ease: "easeOut"
+            }
+        },
+        exit: {
+            x: "-100vw",
+            transition: {
+                duration: 1,
+            }
+        }
+    },
     fadeUp: {
         initial: {
             opacity: 1,
@@ -54,6 +74,21 @@ export const MOTION_VARIANTS = {
                 delay: 1,
                 staggerChildren: .4,
                 ease: "easeOut",
+                when: "beforeChildren"
+            }
+        }
+    },
+    projects: {
+        initial: {
+            opacity: .01,
+            x: "100vw",
+        },
+        animate: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                ease: "easeOut",
+                staggerChildren: .3,
                 when: "beforeChildren"
             }
         }
@@ -145,6 +180,64 @@ export const SECTION_VARIANTS = {
             transition: {
                 delay: .6,
                 duration: .7,
+                ease: "easeOut"
+            }
+        }
+    }
+}
+
+export const PROJECT_VARIANTS = {
+    heading: {
+        initial: {
+            opacity: .01,
+            x: 50
+        },
+        animate: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: .8,
+                ease: "easeOut"
+            }
+        }
+    },
+    links: {
+        initial: {
+            opacity: .01,
+            x: 50
+        },
+        animate: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: .8,
+                ease: "easeOut"
+            }
+        }
+    },
+    rule: {
+        initial: {
+            opacity:0,
+            scaleY: .01
+        },
+        animate: {
+            opacity:1,
+            scaleY: 1,
+            transition: {
+                duration: .5,
+                delay: 1.5,
+                ease: "easeOut"
+            }
+        }
+    },
+    image: {
+        initial: {
+            opacity: 0,
+        },
+        animate: {
+            opacity: 1,
+            transition: {
+                duration: 1,
                 ease: "easeOut"
             }
         }

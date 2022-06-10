@@ -21,9 +21,10 @@ const Work = forwardRef((props, ref) => {
         <section id="work" className="work-section" ref={ref}>
             <motion.div className="work-container"
                 ref={section}
-                variants={MOTION_VARIANTS.about}
+                variants={MOTION_VARIANTS.work}
                 initial="initial"
                 animate={motionControls}
+                exit="exit"
             >
                 <motion.h2 variants={SECTION_VARIANTS.headingWork}>Selected <br /> Works</motion.h2>
                 <motion.div className="about-vertical-rule" variants={SECTION_VARIANTS.rule}></motion.div>
