@@ -30,6 +30,8 @@ const Project = ({ data }) => {
             <GatsbyImage className="project-image" image={image} alt="Product mockups" />
           </div>
           <div className="project-section_body">
+            <h2>details</h2>
+            <div className="project-body-vert-rule"></div>
             <MDXRenderer>
               {data.mdx.body}
             </MDXRenderer>
@@ -51,7 +53,7 @@ query ($id: String) {
         description
         featuredImage {
           childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, width: 720)
+            gatsbyImageData(placeholder: BLURRED, width: 1080)
           }
         }
       }

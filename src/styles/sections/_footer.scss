@@ -5,12 +5,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    width: 100%;
 }
 
 .social-links {
-
-    a {color: var(--color-text);}
+    display: flex;
+    a {
+        color: var(--color-text);
+        width: 48px;
+    }
     
     :not(:last-child) {
         margin-right: 1rem;
