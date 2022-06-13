@@ -1,7 +1,12 @@
 @use '../base/breakpoints';
 
+.project {
+    padding-top: 3rem;
+}
+
 .project-section_frontmatter {
     height: 100vh;
+    max-height: 100vh;
     scroll-snap-align: center;
     position: relative;
     display: flex;

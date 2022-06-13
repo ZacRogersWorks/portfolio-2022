@@ -120,8 +120,9 @@ export default function Model(props) {
 
   const [width, setWidth] = useState(window.innerWidth);
   const [position, setPosition] = useState()
+  const [scale, setScale] = useState()
 
-  const breakpoint = 700;
+  const breakpoint = 1024;
   useEffect(() => {
     const handleResizeWindow = () => setWidth(window.innerWidth);
     // subscribe to window resize event "onComponentDidMount"
@@ -134,8 +135,12 @@ export default function Model(props) {
 
   useEffect(() => {
     if (width > breakpoint) {
-      setPosition([2, -2, 3])
-    } else setPosition([0, -1.5, 0])
+      setPosition([4, -2, 3])
+      setScale(.06)
+    } else {
+      setPosition([0, -1, 0])
+      setScale(.055)
+    }
   }, [width])
 
   useEffect(() => {
@@ -149,7 +154,7 @@ export default function Model(props) {
           name="Armature002"
           position={position}
           rotation={[(Math.PI / 2), (Math.PI / 15), (Math.PI / -6)]}
-          scale={0.06}
+          scale={scale}
         >
           <primitive object={nodes.mixamorigHips} />
           <skinnedMesh

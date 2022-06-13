@@ -15,6 +15,7 @@
     }
 }
 
+
 .about-vertical-rule {
     height: 100%;
     border-left: solid 1px var(--color-text);
@@ -22,7 +23,7 @@
     transform-origin: top;
 }
 
-@include breakpoints.sm {
+@include breakpoints.lg {
     .about-container {
         width: 50%;
     }

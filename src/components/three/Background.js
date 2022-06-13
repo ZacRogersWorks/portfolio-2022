@@ -20,10 +20,13 @@ export default function Background() {
         if (currentContext.section.visibleSection === 'hero') {
             setCurrentSection(<HeroScene darkMode={currentContext.darkMode} />)
         }
+        else if (window.location.pathname.startsWith('/projects/')) {
+            setCurrentSection(<AboutScene darkMode={currentContext.darkMode} section={currentContext.section.visibleSection} />)
+        }
         else{
             setCurrentSection(<AboutScene darkMode={currentContext.darkMode} section={currentContext.section.visibleSection} />)
         }
-        }, [currentContext.darkMode, currentContext.section])
+        }, [currentContext.darkMode, currentContext.section, window.location])
 
     return (
         <div className="canvas-container">
