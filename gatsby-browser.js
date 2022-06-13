@@ -14,14 +14,15 @@ export const shouldUpdateScroll = ({
     routerProps: { location },
     getSavedScrollPosition
 }) => {
+    console.log('Router', location.action)
     const TRANSITION_DELAY = 1000
 
-    if (location.action === "PUSH") {
+    if (location.pathname.startsWith('/projects')) {
         window.setTimeout(() => window.scrollTo(0,0), TRANSITION_DELAY)
     }
 
     else {
-        const savedPosition = getSavedScrollPosition(location) || [0,0]
+        const savedPosition = getSavedScrollPosition(location, location.key) || [0,0]
         window.setTimeout(() => window.scrollTo(...savedPosition), TRANSITION_DELAY)
     }
 

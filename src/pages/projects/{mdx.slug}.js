@@ -19,23 +19,23 @@ const Project = ({ data }) => {
     if (sectionInView) {
       motionControls.start('animate');
     }
-  })
+  }, [motionControls, sectionInView])
 
   return (
     <Layout>
       <main>
         <article className="project">
-          <button href="/">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24.047" height="24.047" viewBox="0 0 24.047 24.047">
-              <path id="Icon_ionic-md-arrow-back" data-name="Icon ionic-md-arrow-back" d="M30.023,16.5H11.763L20.18,8.081,18,5.977,5.977,18,18,30.023l2.1-2.1L11.763,19.5h18.26Z" transform="translate(-5.977 -5.977)" />
-            </svg>
-          </button>
           <motion.div
             className="project-section_frontmatter"
             variants={MOTION_VARIANTS.projects}
             initial="initial"
             animate="animate"
           >
+            <button href="/" className="back-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24.047" height="24.047" viewBox="0 0 24.047 24.047">
+                <path id="Icon_ionic-md-arrow-back" data-name="Icon ionic-md-arrow-back" d="M30.023,16.5H11.763L20.18,8.081,18,5.977,5.977,18,18,30.023l2.1-2.1L11.763,19.5h18.26Z" transform="translate(-5.977 -5.977)" />
+              </svg>
+            </button>
             <div className="project-title">
               <motion.h1 variants={PROJECT_VARIANTS.heading}>{data.mdx.frontmatter.title}</motion.h1>
               <motion.p variants={PROJECT_VARIANTS.heading}>{data.mdx.frontmatter.date}</motion.p>

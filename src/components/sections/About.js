@@ -40,7 +40,16 @@ const About = forwardRef((props, ref) => {
                     variants={SECTION_VARIANTS.p}
                 >
                     <p className="about-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla facilisi morbi tempus iaculis urna id volutpat. Elementum integer enim neque volutpat ac tincidunt vitae semper. Porta nibh venenatis cras sed felis. Hac habitasse platea dictumst vestibulum rhoncus est. Facilisis magna etiam tempor orci eu. Condimentum id venenatis a condimentum vitae sapien. Ullamcorper morbi tincidunt ornare massa eget egestas.
+                        My time spent working at a world-renowned furniture design house taught me how
+                        modernist craftspersons operate: distill the design to its most beautiful and basic utility,
+                        consider every use case, and craft the product out of the highest quality 
+                        materials available. This philosophy inspired me to craft my own products.
+                        <br/>
+                        Today I build my products out of code instead of wood and metal. I design every project to be
+                        fast, easy to read, easy to use, and have a reference to nature.
+                        <br/><br/>
+                        In my free time, you can find me consuming mass amounts of science fiction or
+                        playing with <a title="Zac plays synths" href="https://www.youtube.com/channel/UCDzr_UKG-sC-xKXjslkDEbw">synthesizers.</a>
                     </p>
                 </motion.div>
             </motion.div>
