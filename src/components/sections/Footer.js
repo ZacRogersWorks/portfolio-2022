@@ -65,8 +65,6 @@ const FooterComponent = (props) => {
             </div>
             <div>
                 <p className="copyright">Designed & Developed by Zac Rogers ©2022</p>
-                <a className="credits" href="#" title="Credits, Attributions, & Thanks ">Credits & Attributions </a>
-                <a className="privacy" href="#" title="Privacy Policy">|Privacy</a>
 
             </div>
         </motion.footer>

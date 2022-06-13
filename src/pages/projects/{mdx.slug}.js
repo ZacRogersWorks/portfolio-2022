@@ -42,8 +42,8 @@ const Project = ({ data }) => {
             </div>
             <motion.div className="project-vert-rule" variants={PROJECT_VARIANTS.rule}></motion.div>
             <motion.div className="project-links" variants={PROJECT_VARIANTS.links} >
-              <a href={data.mdx.frontmatter.url} >Live Site</a>
-              <a href={data.mdx.frontmatter.repo} >Repo</a>
+              <a href={data.mdx.frontmatter.url} title="Live Site">Live Site</a>
+              <a href={data.mdx.frontmatter.repo} title="Repo">Repo</a>
             </motion.div>
             <motion.div variants={PROJECT_VARIANTS.image}>
               <GatsbyImage className="project-image" image={image} alt="Product mockups" />
