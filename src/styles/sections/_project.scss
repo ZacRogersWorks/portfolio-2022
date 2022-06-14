@@ -13,6 +13,16 @@
     background: none;
     border: none;
     width: 48px;
+    cursor: pointer;
+    transition: transform .2s ease-out;
+
+    &:hover {
+        transform: scale(1.1)
+    }
+
+    &:active {
+        transform: scale(.9);
+    }
 }
 
 @include breakpoints.md {
@@ -87,6 +97,7 @@
 
     a {
         align-self: flex-end;
+        font-weight: normal;
     }
 }
 

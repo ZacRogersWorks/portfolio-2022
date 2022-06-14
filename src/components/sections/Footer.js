@@ -74,7 +74,7 @@ const FooterComponent = (props) => {
                 </div>
             </div>
             <div>
-                <p className="copyright">Designed & Developed by Zac Rogers ©2022</p>
+                <p className="copyright">Designed & Developed by Zac Rogers <span>©</span> 2022</p>
 
             </div>
         </motion.footer>

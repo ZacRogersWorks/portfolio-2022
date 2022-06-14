@@ -84,38 +84,31 @@ a {
     position: relative;
     color: var(--color-text);
     text-decoration: none;
+    font-weight: bold;
 
     svg {
         margin-left: 6px;
     }
-}
 
-// @include breakpoints.md {
-//     a {
-//         svg {
-//             margin-left: 8px;
-//         }
-//     }
-// }
-
-a::before {
-    content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  transform-origin: right;
-  transform: scale(0);
-  background-color: var(--color-text);
-  transition: transform 0.5s ease;
-}
-
-a:hover {
     &::before {
-        transform-origin: left;
-        transform: scaleX(1);
+        content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      transform-origin: right;
+      transform: scale(0);
+      background-color: var(--color-text);
+      transition: transform 0.5s ease;
+    }
+
+    &:hover {
+        &::before {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
     }
 }
 

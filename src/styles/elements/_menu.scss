@@ -1,6 +1,7 @@
 @use '../base/themes';
 
 .menu-icon {
+    border-radius: 50%;
 
     &:after {
         content: " ";
@@ -17,11 +18,17 @@
         transition: opacity .5s ease-out;
     }
 
-    &:hover {
+    &:hover{
         cursor: pointer;
         &::after {
             opacity: 1;
-            
+        }
+    }
+
+    &:focus {
+        cursor: pointer;
+        &::after {
+            opacity: 1;
         }
     }
 }

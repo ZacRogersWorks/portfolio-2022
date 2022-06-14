@@ -12,6 +12,7 @@ body {
     background-color: var(--color-background);
     color: var(--color-text);
     position: relative;
+
 }
 
 section, nav {
@@ -45,4 +46,9 @@ canvas {
     z-index: -3;
     height: 100%;
     width: 100%;
+}
+
+*:focus {
+    outline: var(--focus-outline) 2px solid;
+    box-shadow: 0 0 15px 2px var(--focus-outline);
 }
