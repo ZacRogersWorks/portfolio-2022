@@ -31,7 +31,7 @@ const Hero = forwardRef((props, ref) => {
                 <motion.span className='tagline'
                     variants={MOTION_VARIANTS.hero}
                 >
-                    Creative Developer
+                    Front-End Developer
                 </motion.span>
                 <motion.div className="hero-rule"
                     initial={{ opacity: .01, scaleY: .01 }}

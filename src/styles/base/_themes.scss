@@ -4,10 +4,16 @@ body {
     --color-text: #{c.$dark};
     --color-background: #{c.$light};
     --color-menu: #{c.$dark};
+    --color-link: rgb(138, 82, 91);
+    --button-active: rgba(0, 0, 0, 0.2);
+    --text-opposite: #{c.$light};
 }
 
 body.dark-mode {
     --color-text: #{c.$light};
     --color-background: #{c.$dark};
     --color-menu: #{c.$light};
+    --color-link: orange;
+    --button-active: rgba(255, 255, 255, 0.2);
+    --text-opposite: #{c.$dark};
 }

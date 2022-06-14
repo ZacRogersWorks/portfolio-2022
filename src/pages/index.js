@@ -10,7 +10,7 @@ import { useSiteContext } from "../components/context/SiteContext";
 import '../styles/styles.scss'
 
 //Components
-import Layout from '../layouts/Layout'
+import Layout from '../components/sections/Layout'
 import Hero from '../components/sections/Hero'
 import TransitionOverlay from "../components/elements/TransitionOverlay";
 import About from '../components/sections/About'

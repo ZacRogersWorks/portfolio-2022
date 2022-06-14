@@ -4,8 +4,6 @@ import { Canvas } from '@react-three/fiber'
 import { Loader } from '@react-three/drei'
 import HeroScene from './HeroScene'
 import AboutScene from './AboutScene'
-import WorkScene from './WorkScene'
-import { setQuaternionFromProperEuler } from 'three/src/math/MathUtils'
 
 const loaderColors = {
     light:"linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(39,58,95,1) 34%, rgba(230,230,230,1) 51%, rgba(74,94,134,1) 100%)",

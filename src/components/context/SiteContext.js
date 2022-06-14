@@ -17,6 +17,7 @@ const SiteContextProvider = ({children}) => {
   const [about, aboutInView] = useInView({ threshold: .5 })
   const [work, workInView] = useInView({ threshold: .5 })
   const [contact, contactInView] = useInView({ threshold: .8 })
+  const [project, projectInView] = useInView({ threshold: .1})
 
   const darkModeTogglez = () => {
     if (darkMode) {
@@ -36,6 +37,7 @@ const SiteContextProvider = ({children}) => {
     if (aboutInView) setVisibleSection("about")
     if (workInView) setVisibleSection("work")
     if (contactInView) setVisibleSection("contact")
+    if (projectInView) setVisibleSection("project")
   }, [heroInView, aboutInView, workInView, contactInView])
 
   return (
@@ -49,6 +51,7 @@ const SiteContextProvider = ({children}) => {
           about,
           work,
           contact,
+          project
         }
       }
     }}>

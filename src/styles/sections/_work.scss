@@ -33,6 +33,10 @@
         font-size: 3rem;
         text-decoration: none;
         color: var(--color-text);
+
+        &::before {
+            background-color: var(--color-text) !important;
+        }
     }
 
     .work-list-link-container {
