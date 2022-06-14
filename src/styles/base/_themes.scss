@@ -7,6 +7,7 @@ body {
     --color-link: rgb(138, 82, 91);
     --button-active: rgba(0, 0, 0, 0.2);
     --text-opposite: #{c.$light};
+    --focus-outline: rgb(247, 147, 163);
 }
 
 body.dark-mode {
@@ -16,4 +17,5 @@ body.dark-mode {
     --color-link: orange;
     --button-active: rgba(255, 255, 255, 0.2);
     --text-opposite: #{c.$dark};
+    --focus-outline: rgb(247, 184, 147);
 }

@@ -1,19 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Planet } from 'react-planet'
 import { motion, useAnimation } from 'framer-motion'
 import { StaticImage } from 'gatsby-plugin-image'
 
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
-const Menu = () => {
-    const svgVariants = {
-        hidden: { scale: .2 },
-        animate: {
-            scale: 1,
-            transition: { duration: .4 }
-        }
+const svgVariants = {
+    hidden: { scale: .2 },
+    animate: {
+        scale: 1,
+        transition: { duration: .4 }
     }
+}
 
+
+const Menu = () => {
+    //Menu link refs
+    const homeRef = useRef(null);
+    const aboutRef = useRef(null);
+    const workRef = useRef(null);
+    const contactRef = useRef(null);
+   
     const [isOpen, setIsOpen] = useState(false)
     const [icon, setIcon] = useState(
         <motion.svg id="Menu_Button" data-name="Menu Button" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
@@ -103,6 +110,10 @@ const Menu = () => {
         )
     }
 
+    useEffect(() => {
+        console.log('Focus', document.activeElement)
+    },[document.activeElement])
+
 
     return (
         <Planet centerContent={
@@ -124,16 +135,16 @@ const Menu = () => {
             onClick={handleOpen}
             onClose={handleClose}
         >
-            <AnchorLink to="/#contact" className="menu-link contact">
+            <AnchorLink to="/#contact" className="menu-link contact" ref={contactRef}>
                 Contact
             </AnchorLink>
-            <AnchorLink to="/#work" className="menu-link work" >
+            <AnchorLink to="/#work" className="menu-link work"  ref={workRef}>
                 Work
             </AnchorLink>
-            <AnchorLink to="/#about" className="menu-link about">
+            <AnchorLink to="/#about" className="menu-link about" ref={aboutRef}>
                 About
             </AnchorLink>
-            <AnchorLink to="/#home" className="menu-link home" style={{marginTop: '1rem'}}>
+            <AnchorLink to="/#home" className="menu-link home" style={{marginTop: '1rem'}} ref={homeRef}>
                 Home
             </AnchorLink>
             <div></div>
