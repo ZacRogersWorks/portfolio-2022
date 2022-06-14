@@ -41,7 +41,7 @@ const Menu = () => {
         if (!isOpen) {
             setIsOpen(true)
             setIcon(
-                <motion.svg xmlns="http://www.w3.org/2000/svg" width="17.414" height="17.414" viewBox="0 0 17.414 17.414"
+                <motion.svg id="Menu_Button" xmlns="http://www.w3.org/2000/svg" width="17.414" height="17.414" viewBox="0 0 17.414 17.414"
                     variants={svgVariants}
                     initial="hidden"
                     animate="animate"

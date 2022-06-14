@@ -30,12 +30,11 @@ export const MOTION_VARIANTS = {
     },
     work: {
         initial: {
-            opacity: 0
+            opacity: 1
         },
         animate: {
             opacity: 1,
             transition: {
-                duration: 1,
                 staggerChildren: .1,
                 when: "beforeChildren",
                 ease: "easeOut"
@@ -71,8 +70,7 @@ export const MOTION_VARIANTS = {
             y: 0,
             transition: {
                 duration: 1.3,
-                delay: 1,
-                staggerChildren: .4,
+                staggerChildren: .3,
                 ease: "easeOut",
                 when: "beforeChildren"
             }
@@ -240,6 +238,29 @@ export const PROJECT_VARIANTS = {
                 duration: 1,
                 ease: "easeOut"
             }
+        }
+    }
+}
+
+export const SVG_VARIANTS = {
+    initial: {opacity: 0},
+    animate: {
+        opacity: 1
+    },
+
+}
+
+export const PATH_VARIANTS = {
+    initial: {
+        pathLength: 0,
+        fillOpacity: 0,
+    },
+    animate: {
+        pathLength: [0, .5, .75, 1, 0],
+        fillOpacity: [0, 0, .5, 1, 1],
+        transition: {
+            duration: 2,
+            ease: "easeOut",
         }
     }
 }

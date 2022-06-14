@@ -13,6 +13,17 @@
     a {
         color: var(--color-text);
         width: 48px;
+        height: 48px;
+        pointer-events: all;
+    }
+
+    a :hover {
+        opacity: .8;
+        transform: scale(.98)
+    }
+
+    a::before {
+        background-color: transparent;
     }
     
     :not(:last-child) {

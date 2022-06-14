@@ -1,7 +1,25 @@
 @use '../base/breakpoints';
+@use '../base/themes';
 
-.project {
-    padding-top: 3rem;
+.back-button {
+    position: absolute;
+    top: 3.2rem;
+    left: 1rem;
+    z-index: 11;
+    color: var(--color-text);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: none;
+    border: none;
+    width: 48px;
+}
+
+@include breakpoints.md {
+    .back-button {
+        top: 4.5rem;
+        left: 3rem;
+    }
 }
 
 .project-section_frontmatter {
@@ -12,7 +30,7 @@
     display: flex;
     flex-direction: column;
     justify-content: stretch;
-    padding-bottom: 2.5rem;
+    padding: 3rem 0 2.5rem 0;
 }
 
 .project-title {
@@ -36,7 +54,7 @@
     display: flex;
     flex-direction: column;
     justify-content: stretch;
-    padding: 2rem 0 2.5rem 0;
+    padding: 2.5rem 0 2.5rem 0;
 
     h2 {
         letter-spacing: 6px;
@@ -65,9 +83,10 @@
     flex-direction: inherit;
     text-align: right;
     font-family: "space mono", sans-serif;
+    width: auto;
 
     a {
-        color: var(--color-text)
+        align-self: flex-end;
     }
 }
 
@@ -76,6 +95,7 @@
     max-width: 960px;
     height: auto;
     position: absolute;
+    z-index: -1;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -30%)
