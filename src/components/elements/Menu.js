@@ -118,6 +118,7 @@ const Menu = () => {
     return (
         <Planet centerContent={
             <motion.button className="menu-icon"
+            tabIndex="1"
             variants={svgVariants}
             initial="hidden"
             animate="animate"
