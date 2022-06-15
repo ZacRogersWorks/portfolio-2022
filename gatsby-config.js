@@ -1,7 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Portfolio 2022`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Zac Rogers | Front End Developer`,
+    siteUrl: `https://www.zacrogers.works`,
+    description: `Building keen, clean, & serene websites.`,
+    author: `Zac Rogers`
   },
   plugins: ["gatsby-plugin-image",
     "gatsby-plugin-react-helmet",

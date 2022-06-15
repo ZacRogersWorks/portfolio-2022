@@ -9,10 +9,12 @@ import { useInView } from 'react-intersection-observer'
 import { MOTION_VARIANTS, SECTION_VARIANTS, PROJECT_VARIANTS } from '../../variants/MOTION_VARIANTS'
 
 import Layout from '../../components/sections/Layout'
+import { Seo } from '../../components/Seo'
 
 const Project = ({ data }) => {
   const currentContext = useSiteContext();
   const image = getImage(data.mdx.frontmatter.featuredImage.childImageSharp.gatsbyImageData)
+  const seoImage = data.mdx.frontmatter.featuredImage.publicURL
 
   const motionControls = useAnimation();
   const [section, sectionInView] = useInView({ threshold: .8 });
@@ -25,6 +27,11 @@ const Project = ({ data }) => {
 
   return (
     <Layout>
+      <Seo 
+        title={data.mdx.frontmatter.title}
+        image={seoImage}
+        description={data.mdx.frontmatter.description}
+      />
       <button className="back-button" onClick={() => navigate(-1)}>
         <svg xmlns="http://www.w3.org/2000/svg" width="24.047" height="24.047" viewBox="0 0 24.047 24.047">
           <path fill="currentColor" id="Icon_ionic-md-arrow-back" data-name="Icon ionic-md-arrow-back" d="M30.023,16.5H11.763L20.18,8.081,18,5.977,5.977,18,18,30.023l2.1-2.1L11.763,19.5h18.26Z" transform="translate(-5.977 -5.977)" />
@@ -88,6 +95,7 @@ query ($id: String) {
         date(formatString: "YYYY")
         description
         featuredImage {
+          publicURL
           childImageSharp {
             gatsbyImageData(placeholder: BLURRED, width: 1080)
           }
