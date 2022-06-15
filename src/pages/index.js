@@ -15,6 +15,7 @@ import Hero from '../components/sections/Hero'
 import TransitionOverlay from "../components/elements/TransitionOverlay";
 import About from '../components/sections/About'
 import Work from '../components/sections/Work'
+import { Seo } from "../components/Seo";
 
 const Home = () => {
   const { section } = useSiteContext()
@@ -22,6 +23,7 @@ const Home = () => {
   return (
     <div>
       <Layout>
+        <Seo />
         <TransitionOverlay />
         <Hero ref={section.refs.hero} />
         <About ref={section.refs.about} />
