@@ -30,7 +30,7 @@
         background-color: transparent;
     }
 
-    &:not(:last-child) {
+    :not(:last-child) {
         margin-right: 1rem;
     }
 }

@@ -89,7 +89,13 @@ export const MOTION_VARIANTS = {
                 staggerChildren: .3,
                 when: "beforeChildren"
             }
-        }
+        },
+        exit: {
+            x: "100vw",
+            transition: {
+                duration: 1,
+            }
+        },
     }
 }
 
