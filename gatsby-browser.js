@@ -3,7 +3,7 @@ import { SiteContextProvider } from './src/components/context/SiteContext'
 import { AnimatePresence } from 'framer-motion'
 import { MOTION_VARIANTS } from './src/variants/MOTION_VARIANTS'
 import {waitForElementToExist} from './src/utilities'
-
+import { useSiteContext } from './src/components/context/SiteContext'
 
 export const wrapRootElement = ({ element }) => {
     return (
@@ -43,11 +43,13 @@ export const onRouteUpdate = ({
                 window?.scrollTo(0, 0)
             },
             transitionDelay);
-    } else if (path.startsWith('/')) {
+    } else if (path === '/') {
         const cameFromProjects = prevLocation && prevLocation.pathname.startsWith('/projects/')
         if (cameFromProjects) {
+            const hash = location.hash || '#work'
+            
             setTimeout( () => {
-                waitForElementToExist('section#work')
+                waitForElementToExist(`section${hash}`)
                 .then(workSection => workSection.scrollIntoView(true))
             },transitionDelay)
         }

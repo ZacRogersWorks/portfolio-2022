@@ -1,10 +1,10 @@
-import React, { Suspense, useEffect, useState, useRef, useContext } from 'react'
-import { PerspectiveCamera, Float } from '@react-three/drei'
-import Model from './Model'
+import React from 'react';
+import { Float, PerspectiveCamera } from '@react-three/drei'
+import { useEffect, useState } from 'react'
 import Bubble from './Bubble'
 import Gradient from './Gradient'
+import Model from './Model'
 
-import SiteContext from '../context/SiteContext'
 
 import UNIQUE_ID from '../../utilities/UNIQUE_ID'
 

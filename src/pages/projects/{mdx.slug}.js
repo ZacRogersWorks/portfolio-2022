@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react'
-import { graphql, useScrollRestoration, navigate, Link } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import React from 'react';
+import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { useEffect } from 'react'
 import { useSiteContext } from '../../components/context/SiteContext'
 
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { MOTION_VARIANTS, SECTION_VARIANTS, PROJECT_VARIANTS } from '../../variants/MOTION_VARIANTS'
+import { MOTION_VARIANTS, PROJECT_VARIANTS, SECTION_VARIANTS } from '../../variants/MOTION_VARIANTS'
 
 import Layout from '../../components/sections/Layout'
+import Contact from '../../components/sections/Contact';
 import { Seo } from '../../components/Seo'
 
 const Project = ({ data }) => {
@@ -82,6 +84,7 @@ const Project = ({ data }) => {
           </motion.div>
         </motion.div>
       </article>
+      <Contact ref={currentContext.section.refs.contact} dataId={"projectContact"}/>
     </Layout>
   )
 }

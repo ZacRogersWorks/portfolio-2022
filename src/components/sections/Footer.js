@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { StaticQuery, graphql } from "gatsby"
-import { GatsbyImage } from 'gatsby-plugin-image'
-import { useSiteContext } from '../context/SiteContext'
+import React from 'react';
 import { motion, useAnimation } from 'framer-motion'
+import { graphql, StaticQuery } from "gatsby"
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
+import { useSiteContext } from '../context/SiteContext'
 
-import { MOTION_VARIANTS, SECTION_VARIANTS, SVG_VARIANTS, PATH_VARIANTS } from '../../variants/MOTION_VARIANTS'
+import { MOTION_VARIANTS, PATH_VARIANTS, SVG_VARIANTS } from '../../variants/MOTION_VARIANTS'
 
 const FooterComponent = (props) => {
     // Dark Mode logo
