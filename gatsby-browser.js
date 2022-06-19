@@ -2,7 +2,7 @@ import React from 'react'
 import { SiteContextProvider } from './src/components/context/SiteContext'
 import { AnimatePresence } from 'framer-motion'
 import { MOTION_VARIANTS } from './src/variants/MOTION_VARIANTS'
-import {waitForElementToExist} from './src/utilities'
+import {waitForElementToExist} from './src/utilities/waitForElementToExist'
 import { useSiteContext } from './src/components/context/SiteContext'
 
 export const wrapRootElement = ({ element }) => {
@@ -37,13 +37,7 @@ export const onRouteUpdate = ({
     const transitionDelay = (MOTION_VARIANTS.work.exit.transition.duration * 1000) + 100
     console.log('PrevLocation', prevLocation)
 
-    if (isProject) {
-        setTimeout(
-            () => {
-                window?.scrollTo(0, 0)
-            },
-            transitionDelay);
-    } else if (path === '/') {
+    if (path === '/') {
         const cameFromProjects = prevLocation && prevLocation.pathname.startsWith('/projects/')
         if (cameFromProjects) {
             const hash = location.hash || '#work'
@@ -51,7 +45,12 @@ export const onRouteUpdate = ({
             setTimeout( () => {
                 waitForElementToExist(`section${hash}`)
                 .then(workSection => workSection.scrollIntoView(true))
-            },transitionDelay)
+            }, transitionDelay)
         }
-    }
+    } else {
+        setTimeout(
+            () => {
+                window.scrollTo(0, 0)
+            }, transitionDelay);
+    } 
 }

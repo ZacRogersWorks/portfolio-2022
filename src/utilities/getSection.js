@@ -1,14 +1,14 @@
-export const getSection = (location) => {
-    location = location || window?.location
+export const getSection = (_location) => {
+    _location = _location || (window && window.location)
 
-    if (location) {
-        if (location.pathname === '/') {
-            if(location.hash.includes('about') ) return 'about'
-            if(location.hash.includes('work') ) return 'work'
-            if(location.hash.includes('contact') ) return 'contact'
+    if (_location) {
+        if (_location.pathname === '/') {
+            if(_location.hash.includes('about') ) return 'about'
+            if(_location.hash.includes('work') ) return 'work'
+            if(_location.hash.includes('contact') ) return 'contact'
             return 'hero'
         }
-        if (location.pathname.startsWith('/projects/')) {
+        if (_location.pathname.startsWith('/projects/')) {
             return 'project'
         }
 

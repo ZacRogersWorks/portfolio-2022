@@ -39,7 +39,7 @@ const Project = ({ data }) => {
           <path fill="currentColor" id="Icon_ionic-md-arrow-back" data-name="Icon ionic-md-arrow-back" d="M30.023,16.5H11.763L20.18,8.081,18,5.977,5.977,18,18,30.023l2.1-2.1L11.763,19.5h18.26Z" transform="translate(-5.977 -5.977)" />
         </svg>
       </Link>
-      <article className="project" ref={currentContext?.section.refs.project}>
+      <article className="project" ref={currentContext.section.refs.project}>
         <motion.div
           className="project-section_frontmatter"
           variants={MOTION_VARIANTS.projects}
@@ -84,7 +84,7 @@ const Project = ({ data }) => {
           </motion.div>
         </motion.div>
       </article>
-      <Contact ref={currentContext.section.refs.contact} dataId={"projectContact"}/>
+      <Contact ref={currentContext?.section.refs.contact} dataId={"projectContact"}/>
     </Layout>
   )
 }
