@@ -4,6 +4,7 @@ import { Canvas } from '@react-three/fiber'
 import { Loader } from '@react-three/drei'
 import HeroScene from './HeroScene'
 import AboutScene from './AboutScene'
+import { useLocation } from '@reach/router'
 
 const loaderColors = {
     light:"linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(39,58,95,1) 34%, rgba(230,230,230,1) 51%, rgba(74,94,134,1) 100%)",
@@ -13,18 +14,19 @@ const loaderColors = {
 export default function Background() {
     const currentContext = useSiteContext()
     const [currentSection, setCurrentSection] = useState()
+    const location = useLocation()
 
     useEffect(() => {
         if (currentContext.section.visibleSection === 'hero') {
             setCurrentSection(<HeroScene darkMode={currentContext.darkMode} />)
         }
-        else if (window.location.pathname.startsWith('/projects/')) {
+        else if (location.pathname.startsWith('/projects/')) {
             setCurrentSection(<AboutScene darkMode={currentContext.darkMode} section={currentContext.section.visibleSection} />)
         }
         else{
             setCurrentSection(<AboutScene darkMode={currentContext.darkMode} section={currentContext.section.visibleSection} />)
         }
-        }, [currentContext.darkMode, currentContext.section, window.location])
+        }, [currentContext.darkMode, currentContext.section, location])
 
     return (
         <div className="canvas-container">

@@ -1,7 +1,14 @@
 import React, { useEffect, useState, createContext, useContext } from 'react'
 import { useInView } from 'react-intersection-observer'
 
-const SiteContext = createContext()
+const SiteContext = createContext({
+  darkMode: false,
+  darkModeToggle: () => undefined,
+  section: {
+    visibleSection: 'hero',
+    refs: {}
+  }
+})
 
 const useSiteContext = () => {
   const _context = useContext(SiteContext)
