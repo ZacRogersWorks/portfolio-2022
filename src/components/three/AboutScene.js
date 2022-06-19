@@ -4,9 +4,7 @@ import { useEffect, useState } from 'react'
 import Bubble from './Bubble'
 import Gradient from './Gradient'
 import Model from './Model'
-
-
-import UNIQUE_ID from '../../utilities/UNIQUE_ID'
+import * as utils from '../../utilities'
 
 const AboutScene = ({darkMode, section}) => {
     // const currentContext = useContext(SiteContext)
@@ -16,7 +14,7 @@ const AboutScene = ({darkMode, section}) => {
     const createBubble = () => {
         setBubbles(bubbles => {
             const bubbleSlot = bubbleCount % (bubbles.length)
-            bubbles[bubbleSlot] = UNIQUE_ID()
+            bubbles[bubbleSlot] = utils.UNIQUE_ID()
             bubbleCount++
             const bubs = [...bubbles]
             return bubs
