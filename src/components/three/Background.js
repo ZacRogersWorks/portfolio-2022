@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Suspense} from 'react'
+import React, { useEffect, useState, Suspense, useRef} from 'react'
 import { useSiteContext } from '../context/SiteContext'
 import { Canvas } from '@react-three/fiber'
 import { Loader } from '@react-three/drei'
@@ -7,15 +7,16 @@ import AboutScene from './AboutScene'
 import { useLocation } from '@reach/router'
 import * as utils from '../../utilities'
 
-const loaderColors = {
-    light:"linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(39,58,95,1) 34%, rgba(230,230,230,1) 51%, rgba(74,94,134,1) 100%)",
-    dark: "linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(39,58,95,1) 34%, rgba(249,145,66,1) 78%, rgba(203,246,255,1) 100%)"
-}
-
 export default function Background() {
+    const canvasRef = useRef(null)
     const currentContext = useSiteContext()
     const [currentSection, setCurrentSection] = useState()
     const location = useLocation()
+
+    const loaderColors = {
+        light:"#ffffff",
+        dark: "#000000"
+    }
 
     const chooseScene = () => {
         // setTimeout(() => {
@@ -37,14 +38,20 @@ export default function Background() {
 
     useEffect(() => {
         chooseScene()
+
+        setTimeout(() => {
+            console.log('Loader', canvasRef.current)
+        },200)
         }, [])
 
     useEffect(() => {
         chooseScene()
+
         }, [currentContext.darkMode, currentContext.section])
 
+
     return (
-        <div className="canvas-container">
+        <div className="canvas-container" ref={canvasRef}>
                 <Canvas >
                     <Suspense fallback={null}>
                     {currentSection}
@@ -58,9 +65,11 @@ export default function Background() {
                 }}
                 dataStyles={{
                     fontFamily: 'space mono',
-                    color: "#ffffff"
+                    color: `${currentContext.darkMode ? loaderColors.light : loaderColors.dark}`
                 }}
-                barStyles={{backgroundColor: "#7D93A9"}}
+                barStyles={{
+                    backgroundColor: "#7D93A9",
+                }}
                 />
 
         </div>
