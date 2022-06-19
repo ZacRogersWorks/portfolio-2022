@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { StaticQuery, graphql } from "gatsby"
-import { GatsbyImage} from 'gatsby-plugin-image'
+import React from 'react';
+import { graphql, StaticQuery } from "gatsby"
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { useEffect, useState } from 'react'
 import { useSiteContext } from '../context/SiteContext'
 
 import Menu from '../elements/Menu'
-import MenuTest from '../elements/MenuTest'
 
 const Nav = (props) => {
     const currentContext = useSiteContext()

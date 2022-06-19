@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from 'react'
-import SiteContext, { useSiteContext } from '../context/SiteContext'
+import React from 'react';
+import { useSiteContext } from '../context/SiteContext';
 
 const Toggle = () => {
     

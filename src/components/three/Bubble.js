@@ -1,6 +1,6 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React from 'react';
 import { useFrame } from '@react-three/fiber'
-import { Instances } from '@react-three/drei'
+import { useEffect, useRef, useState } from 'react'
 
 const clamp = (value, min, max) => {
     if (value <= min) return min

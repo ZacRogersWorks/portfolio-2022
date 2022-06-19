@@ -1,11 +1,15 @@
 import React, { useEffect, useState, createContext, useContext } from 'react'
 import { useInView } from 'react-intersection-observer'
+import { useLocation } from '@reach/router'
+import * as utils from '../../utilities'
+
+const initialSection = utils.getSection()
 
 const SiteContext = createContext({
   darkMode: false,
   darkModeToggle: () => undefined,
   section: {
-    visibleSection: 'hero',
+    visibleSection: initialSection,
     refs: {}
   }
 })
@@ -19,7 +23,7 @@ const useSiteContext = () => {
 const SiteContextProvider = ({children}) => {
   const [darkMode, setDarkMode] = useState(false)
 
-  const [visibleSection, setVisibleSection] = useState('hero')
+  const [visibleSection, setVisibleSection] = useState(initialSection)
   const [hero, heroInView] = useInView({ threshold: .2 })
   const [about, aboutInView] = useInView({ threshold: .5 })
   const [work, workInView] = useInView({ threshold: .5 })
@@ -39,14 +43,19 @@ const SiteContextProvider = ({children}) => {
    }
   }
 
+  const setVisibleSectionState = (section) => {
+    const history = window || window.history
+    if (history) window.history.pushState({}, "", `#${section}`)
+    setVisibleSection(section)
+  }
 
   useEffect(() => {
     console.log("IN VIEW", visibleSection)
-    if (heroInView) setVisibleSection("hero")
-    if (aboutInView) setVisibleSection("about")
-    if (workInView) setVisibleSection("work")
-    if (contactInView) setVisibleSection("contact")
-    if (projectInView) setVisibleSection("project")
+    if (heroInView) setVisibleSectionState("hero")
+    if (aboutInView) setVisibleSectionState("about")
+    if (workInView) setVisibleSectionState("work")
+    if (contactInView) setVisibleSectionState("contact")
+    if (projectInView) setVisibleSectionState("project")
   }, [heroInView, aboutInView, workInView, contactInView])
 
   return (

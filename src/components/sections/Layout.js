@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
       <div className="page-container">
         <Nav />
         <main {...scrollRestoration}>{children}</main>
-        <Contact ref={currentContext?.section.refs.contact} />
+        {/* <Contact ref={currentContext?.section.refs.contact} /> */}
       </div>
     </div >
   )

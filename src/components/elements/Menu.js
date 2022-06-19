@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
+import { motion } from 'framer-motion'
+import { useRef, useState } from 'react'
 import { Planet } from 'react-planet'
-import { motion, useAnimation } from 'framer-motion'
-import { StaticImage } from 'gatsby-plugin-image'
 
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 

@@ -1,7 +1,6 @@
-import React, { Suspense, useContext, useEffect } from 'react'
-import { Environment, PerspectiveCamera, Float } from '@react-three/drei'
+import React from 'react';
+import { Environment, Float, PerspectiveCamera } from '@react-three/drei'
 import Ocean from './Ocean'
-import SiteContext, {useSiteContext} from '../context/SiteContext'
 
 const HeroScene = (props) => {
     

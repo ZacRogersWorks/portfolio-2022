@@ -1,7 +1,7 @@
+import React from 'react';
+import { extend, useFrame, useLoader, useThree } from '@react-three/fiber'
+import { useMemo, useRef } from 'react'
 import * as THREE from 'three'
-import React, { Suspense, useRef, useMemo } from 'react'
-import { Canvas, extend, useThree, useLoader, useFrame } from '@react-three/fiber'
-import { OrbitControls, Sky } from '@react-three/drei'
 import { Water } from 'three-stdlib'
 
 import waterNormalImg from '../../images/waternormals.jpg'

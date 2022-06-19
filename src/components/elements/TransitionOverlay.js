@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { motion, useTransform, useElementScroll, useViewportScroll, useMotionValue } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+import React from 'react';
+import { motion, useTransform, useViewportScroll } from 'framer-motion';
 
 const TransitionOverlay = () => {
     const { scrollYProgress } = useViewportScroll();
