@@ -27,6 +27,7 @@ const SiteContextProvider = ({children}) => {
   const [project, projectInView] = useInView({ threshold: .01})
 
   const darkModeTogglez = () => {
+   if (document) {
     if (darkMode) {
       setDarkMode(() => false)
       document.body.classList.remove('dark-mode')
@@ -35,6 +36,7 @@ const SiteContextProvider = ({children}) => {
       setDarkMode(() => true)
       document.body.classList.add('dark-mode')
     }
+   }
   }
 
 

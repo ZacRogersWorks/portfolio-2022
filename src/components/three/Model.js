@@ -118,18 +118,18 @@ export default function Model(props) {
   const { nodes, materials, animations } = useGLTF("/me-swimming-3.glb");
   const { actions } = useAnimations(animations, group);
 
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(window?.innerWidth);
   const [position, setPosition] = useState()
   const [scale, setScale] = useState()
 
   const breakpoint = 1024;
   useEffect(() => {
-    const handleResizeWindow = () => setWidth(window.innerWidth);
+    const handleResizeWindow = () => setWidth(window?.innerWidth);
     // subscribe to window resize event "onComponentDidMount"
-    window.addEventListener("resize", handleResizeWindow);
+    window?.addEventListener("resize", handleResizeWindow);
     return () => {
       // unsubscribe "onComponentDestroy"
-      window.removeEventListener("resize", handleResizeWindow);
+      window?.removeEventListener("resize", handleResizeWindow);
     };
   }, []);
 

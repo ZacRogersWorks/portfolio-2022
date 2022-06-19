@@ -21,13 +21,13 @@ const MenuTest = () => {
     //Menu link refs
     const buttonRef = useRef(null);
 
-    const home = document.querySelector(".menuHome")
+    const home = document?.querySelector(".menuHome")
 
-    const about = document.querySelector(".menuAbout")
+    const about = document?.querySelector(".menuAbout")
 
-    const work = document.querySelector(".menuWork")
+    const work = document?.querySelector(".menuWork")
 
-    const contact = document.querySelector(".menuContact")
+    const contact = document?.querySelector(".menuContact")
 
     const [isOpen, setIsOpen] = useState(false)
     const [icon, setIcon] = useState(

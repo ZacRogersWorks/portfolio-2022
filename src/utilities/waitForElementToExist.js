@@ -1,6 +1,6 @@
 export function waitForElementToExist (selector) {
     return new Promise( resolve => {
-        const element = document.querySelector(selector)
+        const element = document?.querySelector(selector)
         if (element) {
             resolve(element)
             return;
@@ -27,6 +27,6 @@ export function waitForElementToExist (selector) {
             })
         })
 
-        observer.observe(document.documentElement, {childList: true, subtree: true})
+        observer.observe(document?.documentElement, {childList: true, subtree: true})
     })
 }

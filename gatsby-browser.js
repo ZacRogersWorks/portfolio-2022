@@ -1,7 +1,6 @@
 import React from 'react'
 import { SiteContextProvider } from './src/components/context/SiteContext'
 import { AnimatePresence } from 'framer-motion'
-import { globalHistory } from '@reach/router'
 import { MOTION_VARIANTS } from './src/variants/MOTION_VARIANTS'
 import {waitForElementToExist} from './src/utilities'
 
@@ -20,49 +19,10 @@ export const wrapPageElement = ({ element }) => {
     )
 }
 
-let locationState
-
-globalHistory.listen(({ location, action }) => {
-    locationState = action
-    if (action === "POP") {
-        console.log('POP')
-    }
-})
-
 export const shouldUpdateScroll = ({
     routerProps: { location },
     getSavedScrollPosition
 }) => {
-
-
-
-    // const TRANSITION_DELAY = 1100
-    // console.log('history state');
-
-    // if (location.pathname.startsWith('/projects/')) {
-    //     setTimeout(
-    //         () => {
-    //             window.scrollTo(0, 0)
-    //         },
-    //         TRANSITION_DELAY);
-    // }
-
-    // if (locationState === "PUSH") {
-    //     setTimeout(
-    //         () => {
-    //             window.scrollTo(0, 0)
-    //         },
-    //         TRANSITION_DELAY);
-    // } else {
-
-    //     const savedPosition = getSavedScrollPosition(location);
-    //     window.setTimeout(
-    //         () => {
-    //             window.scrollTo(...(savedPosition || [0, 0]))
-    //         },
-    //         TRANSITION_DELAY
-    //     );
-    // }
     return false;
 }
 
@@ -80,7 +40,7 @@ export const onRouteUpdate = ({
     if (isProject) {
         setTimeout(
             () => {
-                window.scrollTo(0, 0)
+                window?.scrollTo(0, 0)
             },
             transitionDelay);
     } else if (path.startsWith('/')) {
