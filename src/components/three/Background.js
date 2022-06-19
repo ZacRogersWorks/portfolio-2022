@@ -5,7 +5,7 @@ import { Loader } from '@react-three/drei'
 import HeroScene from './HeroScene'
 import AboutScene from './AboutScene'
 import { useLocation } from '@reach/router'
-import * as utils from '../../utilities'
+import { getSection } from '../../utilities/getSection'
 
 export default function Background() {
     const canvasRef = useRef(null)
@@ -20,7 +20,7 @@ export default function Background() {
 
     const chooseScene = () => {
         // setTimeout(() => {
-            const _section = utils.getSection()
+            const _section = getSection()
             if (_section === 'hero') {
                 setCurrentSection(<HeroScene darkMode={currentContext.darkMode} />)
             }

@@ -1,18 +1,29 @@
 import React, { useEffect, useState, createContext, useContext } from 'react'
 import { useInView } from 'react-intersection-observer'
-import { useLocation } from '@reach/router'
-import * as utils from '../../utilities'
+import { getDarkModeFromStorage, setDarkModeToStorage } from '../../utilities/themeStorage'
+import { getSection } from '../../utilities/getSection'
 
-const initialSection = utils.getSection()
 
-const SiteContext = createContext({
-  darkMode: utils.getDarkModeFromStorage(),
-  darkModeToggle: () => undefined,
-  section: {
-    visibleSection: initialSection,
-    refs: {}
+const initialSection = 'hi'
+
+const getInitialState = () => {
+  return {
+    darkMode: false,
+    darkModeToggle: () => undefined,
+    section: {
+      visibleSection: '',
+      refs: {
+        hero: {},
+        about: {},
+        work: {},
+        contact: {},
+        project: {},
+      }
+    }
   }
-})
+}
+
+const SiteContext = createContext(getInitialState())
 
 const useSiteContext = () => {
   const _context = useContext(SiteContext)
@@ -21,9 +32,9 @@ const useSiteContext = () => {
 }
 
 const SiteContextProvider = ({children}) => {
-  const [darkMode, setDarkMode] = useState(utils.getDarkModeFromStorage())
+  const [darkMode, setDarkMode] = useState(getDarkModeFromStorage)
 
-  const [visibleSection, setVisibleSection] = useState(initialSection)
+  const [visibleSection, setVisibleSection] = useState(getSection)
   const [hero, heroInView] = useInView({ threshold: .2 })
   const [about, aboutInView] = useInView({ threshold: .5 })
   const [work, workInView] = useInView({ threshold: .5 })
@@ -31,20 +42,18 @@ const SiteContextProvider = ({children}) => {
   const [project, projectInView] = useInView({ threshold: .01})
 
   useEffect(() => {
+
     if (darkMode) document.body.classList.add('dark-mode')
   }, [])
 
   const darkModeTogglez = () => {
    if (document) {
-    if (darkMode) {
-      setDarkMode(() => false)
-      document.body.classList.remove('dark-mode')
-    }
-    else {
-      setDarkMode(() => true)
-      document.body.classList.add('dark-mode')
-    }
-    utils.setDarkModeToStorage(!darkMode)
+    setDarkMode((_darkMode) => {
+      const newDarkMode = !_darkMode
+      newDarkMode ? document.body.classList.add('dark-mode') : document.body.classList.remove('dark-mode')
+      setDarkModeToStorage(newDarkMode)
+      return newDarkMode
+    })
    }
   }
 

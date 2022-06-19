@@ -6,7 +6,7 @@ import Gradient from './Gradient'
 import Model from './Model'
 
 
-import UNIQUE_ID from '../../utilities/UNIQUE_ID'
+import {UNIQUE_ID} from '../../utilities/UNIQUE_ID'
 
 const AboutScene = ({darkMode, section}) => {
     // const currentContext = useContext(SiteContext)
