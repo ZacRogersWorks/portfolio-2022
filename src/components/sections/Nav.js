@@ -34,9 +34,6 @@ const Nav = (props) => {
                         <GatsbyImage className="nav-logo" image={logoSrc} alt='Zac Rogers Logo' ></GatsbyImage>
                     </div >
                 </div>
-                {/* <div className="menu-container">
-                    <MenuTest />
-                </div> */}
                     <div className="menu-container">
                         <Menu />
                     </div>
