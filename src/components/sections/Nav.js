@@ -27,10 +27,6 @@ const Nav = (props) => {
         }
     }, [currentContext.section.visibleSection])
 
-    useEffect(()=> {
-        console.log('NAV', props.data)
-    })
-
     return (
         <nav>
                 <div>
