@@ -115,11 +115,6 @@ const Menu = () => {
         )
     }
 
-    useEffect(() => {
-        console.log('Focus', document.activeElement)
-    },[document.activeElement])
-
-
     return (
         <Planet centerContent={
             <motion.button className="menu-icon"
