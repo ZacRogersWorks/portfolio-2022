@@ -138,16 +138,16 @@ const Menu = () => {
                 onClick={handleOpen}
                 onClose={handleClose}
             >
-                <AnchorLink to="/#contact" className="menu-link contact" ref={contactRef}>
+                <AnchorLink to="/#contact" className="menu-link contact" ref={contactRef} tabIndex="-4">
                     Contact
                 </AnchorLink>
-                <AnchorLink to="/#work" className="menu-link work" ref={workRef}>
+                <AnchorLink to="/#work" className="menu-link work" ref={workRef} tabIndex="-3">
                     Work
                 </AnchorLink>
-                <AnchorLink to="/#about" className="menu-link about" ref={aboutRef}>
+                <AnchorLink to="/#about" className="menu-link about" ref={aboutRef} tabIndex="-2">
                     About
                 </AnchorLink>
-                <AnchorLink to="/#home" className="menu-link home" style={{ marginTop: '1rem' }} ref={homeRef}>
+                <AnchorLink to="/#home" className="menu-link home" style={{ marginTop: '1rem' }} ref={homeRef} tabIndex="-1">
                     Home
                 </AnchorLink>
                 <div></div>
