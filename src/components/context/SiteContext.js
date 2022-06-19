@@ -6,7 +6,7 @@ import * as utils from '../../utilities'
 const initialSection = utils.getSection()
 
 const SiteContext = createContext({
-  darkMode: false,
+  darkMode: utils.getDarkModeFromStorage(),
   darkModeToggle: () => undefined,
   section: {
     visibleSection: initialSection,
@@ -21,7 +21,7 @@ const useSiteContext = () => {
 }
 
 const SiteContextProvider = ({children}) => {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(utils.getDarkModeFromStorage())
 
   const [visibleSection, setVisibleSection] = useState(initialSection)
   const [hero, heroInView] = useInView({ threshold: .2 })
@@ -30,16 +30,21 @@ const SiteContextProvider = ({children}) => {
   const [contact, contactInView] = useInView({ threshold: .8 })
   const [project, projectInView] = useInView({ threshold: .01})
 
+  useEffect(() => {
+    if (darkMode) document.body.classList.add('dark-mode')
+  }, [])
+
   const darkModeTogglez = () => {
    if (document) {
     if (darkMode) {
       setDarkMode(() => false)
       document.body.classList.remove('dark-mode')
     }
-    if (!darkMode) {
+    else {
       setDarkMode(() => true)
       document.body.classList.add('dark-mode')
     }
+    utils.setDarkModeToStorage(!darkMode)
    }
   }
 
