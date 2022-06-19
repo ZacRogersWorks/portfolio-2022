@@ -16,16 +16,21 @@ div#planet {
             color: var(--color-text)
         }
     }
-    
-    .makeStyles-planetContent-2, .jss2 {
-        position: relative !important;
-    }
-    
+
     .menu-link {
         font-family: Kayak, sans-serif;
         color: var(--color-text);
         border: none;
         background: none;
         text-decoration: none;
+    }
+    
+    // Overriding styles for React-Planet deployment bug
+    .makeStyles-planetContent-2, .jss2 {
+        position: relative !important;
+    }
+    
+    .jss3 {
+        position: absolute !important;
     }
 }
