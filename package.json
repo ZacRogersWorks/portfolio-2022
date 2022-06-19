@@ -16,6 +16,7 @@
     "install-deps": "npm i --legacy-peer-deps"
   },
   "dependencies": {
+    "@mdx-js/mdx": "2.1.2",
     "@parcel/namer-default": "2.5.0",
     "@react-three/drei": "^9.7.1",
     "@react-three/fiber": "^8.0.13",
