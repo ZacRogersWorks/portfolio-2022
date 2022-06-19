@@ -4,6 +4,7 @@ import { GatsbyImage} from 'gatsby-plugin-image'
 import { useSiteContext } from '../context/SiteContext'
 
 import Menu from '../elements/Menu'
+import MenuTest from '../elements/MenuTest'
 
 const Nav = (props) => {
     const currentContext = useSiteContext()
@@ -37,6 +38,9 @@ const Nav = (props) => {
                         <GatsbyImage className="nav-logo" image={logoSrc} alt='Zac Rogers Logo' ></GatsbyImage>
                     </div >
                 </div>
+                {/* <div className="menu-container">
+                    <MenuTest />
+                </div> */}
                     <div className="menu-container">
                         <Menu />
                     </div>

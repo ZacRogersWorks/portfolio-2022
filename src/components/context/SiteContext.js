@@ -17,7 +17,7 @@ const SiteContextProvider = ({children}) => {
   const [about, aboutInView] = useInView({ threshold: .5 })
   const [work, workInView] = useInView({ threshold: .5 })
   const [contact, contactInView] = useInView({ threshold: .8 })
-  const [project, projectInView] = useInView({ threshold: .1})
+  const [project, projectInView] = useInView({ threshold: .01})
 
   const darkModeTogglez = () => {
     if (darkMode) {

@@ -12,7 +12,7 @@ body {
     background-color: var(--color-background);
     color: var(--color-text);
     position: relative;
-
+    overflow-x: hidden;
 }
 
 section, nav {

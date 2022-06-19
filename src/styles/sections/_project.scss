@@ -16,6 +16,10 @@
     cursor: pointer;
     transition: transform .2s ease-out;
 
+    &::before {
+        background-color: transparent;
+    }
+
     &:hover {
         transform: scale(1.1)
     }
