@@ -9,7 +9,7 @@ import Menu from '../elements/Menu'
 const Nav = (props) => {
     const currentContext = useSiteContext()
     const [showLogo, setShowLogo] = useState('block')
-    const [logoSrc, setLogoSrc] = useState(props.data.allImageSharp.nodes[0].gatsbyImageData)
+    const [logoSrc, setLogoSrc] = useState(props.data.allImageSharp.nodes[currentContext.darkMode ? 1 : 0].gatsbyImageData)
     
     useEffect(() => {
         if (currentContext.darkMode) {
