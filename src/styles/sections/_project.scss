@@ -39,12 +39,13 @@
 .project-section_frontmatter {
     height: 100vh;
     max-height: 100vh;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
     padding: 3rem 0 2.5rem 0;
+    height: calc(var(--vh, 1vh) * 100)
 }
 
 .project-title {
@@ -63,7 +64,7 @@
 
 .project-section_body {
     height: 100vh;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     position: relative;
     display: flex;
     flex-direction: column;

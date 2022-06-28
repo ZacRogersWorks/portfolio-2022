@@ -5,6 +5,7 @@ import { Planet } from 'react-planet'
 
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
+
 const svgVariants = {
     hidden: { opacity: 0, pathLength: 0 },
     animate: {
@@ -94,7 +95,7 @@ const Menu = () => {
     const handleClose = () => {
         setIsOpen(false)
         setIcon(
-            <motion.svg id="Menu_Button" data-name="Menu Button" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37"
+            <motion.svg id="Menu_Button" data-name="Menu Button" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
                 variants={svgVariants}
                 initial="hidden"
                 animate="animate"
