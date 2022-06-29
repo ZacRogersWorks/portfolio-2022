@@ -5,29 +5,33 @@ import Bubble from './Bubble'
 import Gradient from './Gradient'
 import Model from './Model'
 
+import Bubbles from './Bubbles';
+
 
 import {UNIQUE_ID} from '../../utilities/UNIQUE_ID'
 
 const AboutScene = ({darkMode, section}) => {
     // const currentContext = useContext(SiteContext)
-    let bubbleCount = 0
-    const [bubbles, setBubbles] = useState(new Array(12))
 
-    const createBubble = () => {
-        setBubbles(bubbles => {
-            const bubbleSlot = bubbleCount % (bubbles.length)
-            bubbles[bubbleSlot] = UNIQUE_ID()
-            bubbleCount++
-            const bubs = [...bubbles]
-            return bubs
-        })
-    }
+    
+    // let bubbleCount = 0
+    // const [bubbles, setBubbles] = useState(new Array(12))
 
-    useEffect(() => {
-        setInterval(() => {
-           createBubble()
-        }, 800);
-    }, [])
+    // const createBubble = () => {
+    //     setBubbles(bubbles => {
+    //         const bubbleSlot = bubbleCount % (bubbles.length)
+    //         bubbles[bubbleSlot] = UNIQUE_ID()
+    //         bubbleCount++
+    //         const bubs = [...bubbles]
+    //         return bubs
+    //     })
+    // }
+
+    // useEffect(() => {
+    //     setInterval(() => {
+    //        createBubble()
+    //     }, 800);
+    // }, [])
 
     return (
         <scene>
@@ -37,11 +41,12 @@ const AboutScene = ({darkMode, section}) => {
                 <PerspectiveCamera makeDefault position={[0, 0, 20]} fov={50} near={1} far={20000} />
             </Float>
                {(section == 'about') ? <Model /> : null}
-                {
+               <Bubbles />
+                {/* {
                     bubbles.filter(bubble => !!bubble ).map(bubble => {
                         return <Bubble key={bubble} id={bubble} />
                     })
-                }
+                } */}
                 <Gradient darkMode={darkMode} />
         </scene>
     )
