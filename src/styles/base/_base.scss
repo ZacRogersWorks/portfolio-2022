@@ -18,7 +18,13 @@ body {
 }
 
 section, nav {
-    padding: 2.5rem 0;
+    padding: 2.5rem 0 7.5rem 0;
+}
+
+@include breakpoints.md {
+    section {
+        padding: 2.5rem 0;
+    }
 }
 
 .wrapper {
