@@ -9,10 +9,6 @@ const TransitionOverlay = () => {
         [0, 1, 1, 0, 0, 1, 1, 0]
     )
 
-    useEffect(() => {
-        console.log(yValue)
-    }, [yValue])
-
     return (
         <motion.div className="transition-overlay"
             style={{ opacity: yValue }}

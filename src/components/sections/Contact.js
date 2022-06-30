@@ -18,10 +18,6 @@ const Contact = forwardRef((props, ref) => {
         }
     }, [motionControls, sectionInView])
 
-    useEffect(()=> {
-        console.log('CHECK PROPS', props)
-    },[])
-
     return (
         <section id={`${props.dataId}`} className="contact-section" ref={ref}>
             <motion.div className="contact-container"

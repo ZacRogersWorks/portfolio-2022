@@ -14,17 +14,12 @@ const FooterComponent = (props) => {
     const [logoSrc, setLogoSrc] = useState()
 
     useEffect(() => {
-        console.log(props.data)
         if (currentContext.darkMode) {
             setLogoSrc(props.data.allImageSharp.nodes[1].gatsbyImageData)
         } else {
             setLogoSrc(props.data.allImageSharp.nodes[0].gatsbyImageData)
         }
     }, [currentContext.darkMode])
-
-    useEffect(() => {
-        console.log('FOOTER', props.data)
-    }, [])
 
     // Animation
     const motionControls = useAnimation()

@@ -64,7 +64,6 @@ const SiteContextProvider = ({children}) => {
   }
 
   useEffect(() => {
-    console.log("IN VIEW", visibleSection)
     if (heroInView) setVisibleSectionState("hero")
     if (aboutInView) setVisibleSectionState("about")
     if (workInView) setVisibleSectionState("work")

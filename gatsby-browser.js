@@ -39,7 +39,6 @@ export const onRouteUpdate = ({
     const path = location.pathname
     const isProject = path.startsWith('/projects/')
     const transitionDelay = (MOTION_VARIANTS.work.exit.transition.duration * 1000) + 100
-    console.log('PrevLocation', prevLocation)
 
     if (path === '/') {
         const cameFromProjects = prevLocation && prevLocation.pathname.startsWith('/projects/')
