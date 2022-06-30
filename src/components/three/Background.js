@@ -39,10 +39,6 @@ export default function Background() {
 
     useEffect(() => {
         chooseScene()
-
-        setTimeout(() => {
-            console.log('Loader', canvasRef.current)
-        }, 200)
     }, [])
 
     useEffect(() => {
