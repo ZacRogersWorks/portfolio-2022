@@ -1,7 +1,7 @@
+import React from 'react';
+import { extend, useFrame, useLoader, useThree } from '@react-three/fiber'
+import { useMemo, useRef } from 'react'
 import * as THREE from 'three'
-import React, { Suspense, useRef, useMemo } from 'react'
-import { Canvas, extend, useThree, useLoader, useFrame } from '@react-three/fiber'
-import { OrbitControls, Sky } from '@react-three/drei'
 import { Water } from 'three-stdlib'
 
 import waterNormalImg from '../../images/waternormals.jpg'
@@ -19,8 +19,8 @@ function Ocean() {
       textureWidth: 512,
       textureHeight: 512,
       waterNormals,
-      sunDirection: new THREE.Vector3(),
-      sunColor: 0xffffff,
+      sunDirection: new THREE.Vector3(3, 100, 40),
+      sunColor: 0x000000,
       waterColor: 0x001e0f,
       distortionScale: 3.7,
       fog: false,

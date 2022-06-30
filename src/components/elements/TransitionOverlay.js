@@ -1,15 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { motion, useTransform, useElementScroll, useViewportScroll, useMotionValue } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+import React, { useEffect } from 'react';
+import { motion, useTransform, useViewportScroll } from 'framer-motion';
 
 const TransitionOverlay = () => {
     const { scrollYProgress } = useViewportScroll();
     const yValue = useTransform(
-        scrollYProgress, 
-        [0, .1, .2, .25, .33, .44, .56, .6], 
+        scrollYProgress,
+        [0, .1, .2, .25, .33, .44, .56, .6],
         [0, 1, 1, 0, 0, 1, 1, 0]
-        )
+    )
 
+    useEffect(() => {
+        console.log(yValue)
+    }, [yValue])
 
     return (
         <motion.div className="transition-overlay"

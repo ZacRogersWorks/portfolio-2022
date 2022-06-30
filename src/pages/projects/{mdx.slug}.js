@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react'
-import { graphql, useScrollRestoration, navigate } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import React from 'react';
+import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { useEffect } from 'react'
 import { useSiteContext } from '../../components/context/SiteContext'
 
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { MOTION_VARIANTS, SECTION_VARIANTS, PROJECT_VARIANTS } from '../../variants/MOTION_VARIANTS'
+import { MOTION_VARIANTS, PROJECT_VARIANTS, SECTION_VARIANTS } from '../../variants/MOTION_VARIANTS'
 
 import Layout from '../../components/sections/Layout'
+import Contact from '../../components/sections/Contact';
 import { Seo } from '../../components/Seo'
 
 const Project = ({ data }) => {
@@ -32,17 +34,18 @@ const Project = ({ data }) => {
         image={seoImage}
         description={data.mdx.frontmatter.description}
       />
-      <button className="back-button" onClick={() => navigate(-1)}>
+      <Link className="back-button" to="/">
         <svg xmlns="http://www.w3.org/2000/svg" width="24.047" height="24.047" viewBox="0 0 24.047 24.047">
           <path fill="currentColor" id="Icon_ionic-md-arrow-back" data-name="Icon ionic-md-arrow-back" d="M30.023,16.5H11.763L20.18,8.081,18,5.977,5.977,18,18,30.023l2.1-2.1L11.763,19.5h18.26Z" transform="translate(-5.977 -5.977)" />
         </svg>
-      </button>
+      </Link>
       <article className="project" ref={currentContext.section.refs.project}>
         <motion.div
           className="project-section_frontmatter"
           variants={MOTION_VARIANTS.projects}
           initial="initial"
           animate="animate"
+          exit="exit"
         >
           <div className="project-title">
             <motion.h1 variants={PROJECT_VARIANTS.heading}>{data.mdx.frontmatter.title}</motion.h1>
@@ -81,6 +84,7 @@ const Project = ({ data }) => {
           </motion.div>
         </motion.div>
       </article>
+      <Contact ref={currentContext?.section.refs.contact} dataId={"projectContact"}/>
     </Layout>
   )
 }

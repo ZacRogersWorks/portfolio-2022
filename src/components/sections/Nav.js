@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import { StaticQuery, graphql } from "gatsby"
-import { GatsbyImage} from 'gatsby-plugin-image'
+import React from 'react';
+import { graphql, StaticQuery } from "gatsby"
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { useEffect, useState } from 'react'
 import { useSiteContext } from '../context/SiteContext'
 
 import Menu from '../elements/Menu'
+import Toggle from '../elements/Toggle';
 
 const Nav = (props) => {
     const currentContext = useSiteContext()
     const [showLogo, setShowLogo] = useState('block')
-    const [logoSrc, setLogoSrc] = useState(props.data.allImageSharp.nodes[0].gatsbyImageData)
+    const [logoSrc, setLogoSrc] = useState(props.data.allImageSharp.nodes[currentContext.darkMode ? 1 : 0].gatsbyImageData)
     
     useEffect(() => {
         if (currentContext.darkMode) {
@@ -25,10 +27,6 @@ const Nav = (props) => {
             setShowLogo('none');
         }
     }, [currentContext.section.visibleSection])
-
-    useEffect(()=> {
-        console.log('NAV', props.data)
-    })
 
     return (
         <nav>

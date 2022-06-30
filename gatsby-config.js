@@ -36,7 +36,14 @@ module.exports = {
       __key: "work"
     },
     // 'gatsby-plugin-layout',
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        sassOptions: {
+          
+        }
+      }
+    },
     `gatsby-plugin-anchor-links`,
   ]
 };

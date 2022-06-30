@@ -2,6 +2,8 @@
 @use 'themes';
 @use 'breakpoints';
 
+
+
 html {
     scroll-snap-type: y mandatory;
 }
@@ -12,18 +14,23 @@ body {
     background-color: var(--color-background);
     color: var(--color-text);
     position: relative;
-
+    overflow-x: hidden;
 }
 
-<<<<<<< Updated upstream
-section, nav {
-    padding: 2.5rem 0;
-=======
-@include breakpoints.sm {
+section {
+    padding: 2.5rem 0 6.5rem 0;
+}
+
+section {
+    padding: 2.5rem 0 6.5rem 0;
+}
+
+@include breakpoints.md {
     section {
-        padding: 1rem 0 2.5rem 0;
+        padding: 2.5rem 0;
     }
->>>>>>> Stashed changes
+}
+
 }
 
 .wrapper {

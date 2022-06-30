@@ -2,28 +2,34 @@
 @use '../base/themes';
 @use '../base/typography';
 
-.menu-icon {
-    background-color: transparent;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 48px;
-    height: 48px;
-
-    svg {
-        color: var(--color-text)
+div#planet {
+    .menu-icon {
+        background-color: transparent;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 48px;
+    
+        svg {
+            color: var(--color-text)
+        }
     }
-}
 
-.makeStyles-planetContent-2 {
-    position: relative !important;
-}
-
-.menu-link {
-    font-family: Kayak, sans-serif;
-    color: var(--color-text);
-    border: none;
-    background: none;
-    text-decoration: none;
+    .menu-link {
+        font-family: Kayak, sans-serif;
+        color: var(--color-text);
+        border: none;
+        background: none;
+        text-decoration: none;
+    }
+    
+    // Overriding styles for React-Planet deployment bug
+    .makeStyles-planetContent-2, .jss2 {
+        position: relative !important;
+    }
+    
+    .jss3 {
+        position: absolute !important;
+    }
 }

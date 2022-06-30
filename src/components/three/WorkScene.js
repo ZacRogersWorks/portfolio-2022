@@ -1,7 +1,6 @@
-import React, { useRef, useEffect, Suspense } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
+import React from 'react';
 import { PerspectiveCamera } from '@react-three/drei'
-import { LayerMaterial,  Depth, Noise } from 'lamina'
+import { Suspense } from 'react'
 
 import Gradient from './Gradient'
 

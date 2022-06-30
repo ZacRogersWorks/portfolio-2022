@@ -8,7 +8,7 @@ import { useSiteContext } from '../context/SiteContext'
 import '../../styles/styles.scss'
 
 const Layout = ({ children }) => {
-  const { section } = useSiteContext()
+  const currentContext = useSiteContext()
   const scrollRestoration = useScrollRestoration(`page-component-main`)
 
   return (
@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
       <div className="page-container">
         <Nav />
         <main {...scrollRestoration}>{children}</main>
-        <Contact ref={section.refs.contact} />
+        {/* <Contact ref={currentContext?.section.refs.contact} /> */}
       </div>
     </div >
   )

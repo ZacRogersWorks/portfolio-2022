@@ -1,50 +1,77 @@
-import React, { useEffect, useState, Suspense} from 'react'
+import React, { useEffect, useState, Suspense, useRef } from 'react'
 import { useSiteContext } from '../context/SiteContext'
 import { Canvas } from '@react-three/fiber'
 import { Loader } from '@react-three/drei'
 import HeroScene from './HeroScene'
 import AboutScene from './AboutScene'
+import { useLocation } from '@reach/router'
+import { getSection } from '../../utilities/getSection'
 
-const loaderColors = {
-    light:"linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(39,58,95,1) 34%, rgba(230,230,230,1) 51%, rgba(74,94,134,1) 100%)",
-    dark: "linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(39,58,95,1) 34%, rgba(249,145,66,1) 78%, rgba(203,246,255,1) 100%)"
-}
 
 export default function Background() {
+    const canvasRef = useRef(null)
     const currentContext = useSiteContext()
     const [currentSection, setCurrentSection] = useState()
+    const location = useLocation()
 
-    useEffect(() => {
-        if (currentContext.section.visibleSection === 'hero') {
+    const loaderColors = {
+        light: "#ffffff",
+        dark: "#000000"
+    }
+
+    const chooseScene = () => {
+        // setTimeout(() => {
+        const _section = getSection()
+        if (_section === 'hero') {
             setCurrentSection(<HeroScene darkMode={currentContext.darkMode} />)
         }
-        else if (window.location.pathname.startsWith('/projects/')) {
+        // if (currentContext.section.visibleSection === 'hero') {
+        //     setCurrentSection(<HeroScene darkMode={currentContext.darkMode} />)
+        // }
+        // else if (location.pathname.startsWith('/projects/')) {
+        //     setCurrentSection(<AboutScene darkMode={currentContext.darkMode} section={currentContext.section.visibleSection} />)
+        // }
+        else {
             setCurrentSection(<AboutScene darkMode={currentContext.darkMode} section={currentContext.section.visibleSection} />)
         }
-        else{
-            setCurrentSection(<AboutScene darkMode={currentContext.darkMode} section={currentContext.section.visibleSection} />)
-        }
-        }, [currentContext.darkMode, currentContext.section, window.location])
+        // }, 0)
+    }
+
+    useEffect(() => {
+        chooseScene()
+
+        setTimeout(() => {
+            console.log('Loader', canvasRef.current)
+        }, 200)
+    }, [])
+
+    useEffect(() => {
+        chooseScene()
+
+    }, [currentContext.darkMode, currentContext.section])
+
 
     return (
-        <div className="canvas-container">
-                <Canvas >
-                    <Suspense fallback={null}>
+        <div className="canvas-container" ref={canvasRef}>
+            <Canvas >
+                <Suspense fallback={null}>
                     {currentSection}
-                    </Suspense>
-                </Canvas>
-                <Loader 
-                containerStyles={{ 
+                </Suspense>
+            </Canvas>
+            <Loader
+                containerStyles={{
                     background: `${currentContext.darkMode ? loaderColors.dark : loaderColors.light}`,
                     alignItems: "flex-end",
                     paddingBottom: "6rem"
                 }}
                 dataStyles={{
                     fontFamily: 'space mono',
-                    color: "#ffffff"
+                    color: `${currentContext.darkMode ? loaderColors.light : loaderColors.dark}`
                 }}
-                barStyles={{backgroundColor: "#7D93A9"}}
-                />
+                barStyles={{
+                    backgroundColor: "#7D93A9",
+                }}
+            />
 
         </div>
     )
