@@ -20,6 +20,7 @@ const HeroScene = (props) => {
             </Float>
             <Ocean />
             <Environment
+            
                 files={props.darkMode ? [
                     '/nebula-cubemap/px.png',
                     '/nebula-cubemap/nx.png',
@@ -37,7 +38,7 @@ const HeroScene = (props) => {
                         '/sky-cubemap/nz.png',
                     ]}
 
-                resolution={1024} background />
+                resolution={256} background />
         </scene>
     )
 }

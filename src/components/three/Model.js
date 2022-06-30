@@ -2,35 +2,54 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 
+const desktopBreakpoint = 1024;
+const mobileBreakpoint = 500;
+const heightBreakpoint = 690;
+const defaultRotation = [(Math.PI / 2), (Math.PI / 15), (Math.PI / -6)]
+
 export default function Model(props) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/me-swimming-3.glb");
+  const { nodes, materials, animations } = useGLTF("/me-swimming-5.glb");
   const { actions } = useAnimations(animations, group);
 
   const [width, setWidth] = useState(window?.innerWidth);
+  const [height, setHeight] = useState(window?.innerHeight)
   const [position, setPosition] = useState()
   const [scale, setScale] = useState()
+  const [rotation, setRotation] = useState(defaultRotation)
 
-  const breakpoint = 1024;
+
   useEffect(() => {
-    const handleResizeWindow = () => setWidth(window?.innerWidth);
-    // subscribe to window resize event "onComponentDidMount"
+    const handleResizeWindow = () => {
+      setWidth(window?.innerWidth)
+      setHeight(window?.innerHeight)
+    };
     window?.addEventListener("resize", handleResizeWindow);
     return () => {
-      // unsubscribe "onComponentDestroy"
       window?.removeEventListener("resize", handleResizeWindow);
     };
   }, []);
 
   useEffect(() => {
-    if (width > breakpoint) {
-      setPosition([4, -2, 3])
-      setScale(.06)
-    } else {
+    if (width > desktopBreakpoint) {
+      setPosition([6, -3, 3])
+      setScale(.07)
+      setRotation([(Math.PI / 2.5), (Math.PI / 30), (Math.PI / 5)])
+    } else if (width < desktopBreakpoint) {
       setPosition([0, -1, 0])
       setScale(.055)
+      setRotation(defaultRotation)
     }
-  }, [width])
+    if (height < heightBreakpoint) {
+      setPosition([0, 0, 0])
+      setScale(.050)
+    }
+    //  else if (height > heightBreakpoint) {
+    //   setPosition([0, -1, 0])
+    //   setScale(.055)
+    //   setRotation(defaultRotation)
+    // }
+  }, [width, height])
 
   useEffect(() => {
     actions.swim.play()
@@ -42,7 +61,7 @@ export default function Model(props) {
         <group
           name="Armature002"
           position={position}
-          rotation={[(Math.PI / 2), (Math.PI / 15), (Math.PI / -6)]}
+          rotation={rotation}
           scale={scale}
         >
           <primitive object={nodes.mixamorigHips} />
@@ -112,4 +131,4 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload("/me-swimming-3.glb");
+useGLTF.preload("/me-swimming-5.glb");

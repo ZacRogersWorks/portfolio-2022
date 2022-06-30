@@ -35,8 +35,8 @@ const SiteContextProvider = ({children}) => {
   const [darkMode, setDarkMode] = useState(getDarkModeFromStorage)
 
   const [visibleSection, setVisibleSection] = useState(getSection)
-  const [hero, heroInView] = useInView({ threshold: .2 })
-  const [about, aboutInView] = useInView({ threshold: .5 })
+  const [hero, heroInView] = useInView({ threshold: .1 })
+  const [about, aboutInView] = useInView({ threshold: .3 })
   const [work, workInView] = useInView({ threshold: .5 })
   const [contact, contactInView] = useInView({ threshold: .8 })
   const [project, projectInView] = useInView({ threshold: .01})
