@@ -196,6 +196,11 @@
         .social-links {
             display: block;
         }
+
+        a > svg {
+            height: 48px;
+            width: 48px;
+        }
     }
     .contact-form-container {
         width: 66%;

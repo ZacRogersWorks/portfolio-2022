@@ -35,8 +35,9 @@ const AboutScene = ({darkMode, section}) => {
 
     return (
         <scene>
-            <pointLight position={[5, 13, 5]} color={darkMode ? "#BA815D" : "#FFFFBF"} intensity={3} />
-            <pointLight position={[3, -5, 3]} color={darkMode ? "#023643" : "#D6C3CC"} intensity={darkMode ? 16 : 2} />
+            <pointLight position={[5, 13, 5]} color={darkMode ? "#BA815D" : "#FFFFBF"} intensity={5} />
+            <pointLight position={[0, 5, 10]} color={darkMode ? "#BA815D" : "#FFFFBF"} intensity={.5} />
+            <pointLight position={[3, -5, 3]} color={darkMode ? "#023643" : "#D6C3CC"} intensity={darkMode ? 50 : 2} />
             <Float rotationIntensity={.2} floatIntensity={.1}>
                 <PerspectiveCamera makeDefault position={[0, 0, 20]} fov={50} near={1} far={20000} />
             </Float>

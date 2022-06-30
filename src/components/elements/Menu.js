@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { Planet } from 'react-planet'
@@ -18,6 +18,7 @@ const svgVariants = {
         }
     }
 }
+
 
 
 const Menu = () => {
@@ -116,6 +117,14 @@ const Menu = () => {
         )
     }
 
+    useEffect(() => {
+        window.addEventListener('keydown', e => {
+         if(e.key === 'Escape'){
+          handleClose()
+         }
+        })
+       })
+
     return (
         <div id="planet">
             <Planet centerContent={
@@ -124,6 +133,7 @@ const Menu = () => {
                     variants={svgVariants}
                     initial="hidden"
                     animate="animate"
+                    onFocus={handleOpen}
                 >
                     {icon}
                 </motion.button>
@@ -139,16 +149,16 @@ const Menu = () => {
                 onClick={handleOpen}
                 onClose={handleClose}
             >
-                <AnchorLink to="/#contact" className="menu-link contact" ref={contactRef} tabIndex="-4">
+                <AnchorLink to="/#contact" className="menu-link contact" ref={contactRef} tabIndex="-4" onFocus={handleOpen} >
                     Contact
                 </AnchorLink>
-                <AnchorLink to="/#work" className="menu-link work" ref={workRef} tabIndex="-3">
+                <AnchorLink to="/#work" className="menu-link work" ref={workRef} tabIndex="-3" onFocus={handleOpen} >
                     Work
                 </AnchorLink>
-                <AnchorLink to="/#about" className="menu-link about" ref={aboutRef} tabIndex="-2">
+                <AnchorLink to="/#about" className="menu-link about" ref={aboutRef} tabIndex="-2" onFocus={handleOpen} >
                     About
                 </AnchorLink>
-                <AnchorLink to="/#home" className="menu-link home" style={{ marginTop: '1rem' }} ref={homeRef} tabIndex="-1">
+                <AnchorLink to="/#home" className="menu-link home" style={{ marginTop: '1rem' }} ref={homeRef} tabIndex="-1" onFocus={handleOpen} >
                     Home
                 </AnchorLink>
                 <div></div>
