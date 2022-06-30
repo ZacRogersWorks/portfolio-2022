@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Helmet } from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-export const Seo = ({ description, keywords, title, image, url, author }) => {
+export const Seo = ({ description, keywords, title, image, url, author, data }) => {
+
     return (
         <StaticQuery
             query={detailsQuery}
@@ -13,8 +14,9 @@ export const Seo = ({ description, keywords, title, image, url, author }) => {
                 const metaImage = image || data.site.siteMetadata.image
                 const metaUrl = url || data.site.siteMetadata.url
                 const metaKeywords = keywords || ["web design for small businesses", "web development for small businesses", "threejs web development services", "interactive web development services", "seattle web developer", "web development packages"]
+                console.log('metadata', metaTitle)
                 return (
-                    <Helmet title={title}
+                    <Helmet title={metaTitle}
                         meta={[
                             {
                                 name: `description`,

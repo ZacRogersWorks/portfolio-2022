@@ -21,7 +21,7 @@ const ContactForm = () => {
         initial="initial"
         animate={motionControls}
         >
-            <motion.p variants={SECTION_VARIANTS.fadeUpP}>Send me a message to discuss your next project.</motion.p>
+            <motion.p variants={SECTION_VARIANTS.fadeUpP}>Like what you see? Let's chat.</motion.p>
             <motion.form
                 name="ZacRogers.Works"
                 data-netlify="true"
