@@ -1,4 +1,5 @@
 @use '../base/breakpoints';
+@use '../base/themes';
 
 .footer-links {
     margin: 1rem 0;
@@ -22,17 +23,21 @@
     }
 
     a :hover {
-        opacity: .8;
-        transform: scale(.98)
+        transform: scale(.98);
+        color: var(--focus-outline)
     }
 
     a::before {
         background-color: transparent;
+        
     }
+
 
     :not(:last-child) {
         margin-right: 1rem;
     }
+
+  
 }
 
 .copyright{
