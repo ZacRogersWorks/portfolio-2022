@@ -61,7 +61,7 @@ canvas {
 }
 
 *:focus {
-    outline: var(--focus-outline) 2px solid;
+    // outline: var(--focus-outline) 2px solid;
     box-shadow: 0 0 15px 2px var(--focus-outline);
 }
 
@@ -70,5 +70,5 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
-    -webkit-text-fill-color: var(--color-text);
+    -webkit-text-fill-color: var(--focus-outline);
 }
