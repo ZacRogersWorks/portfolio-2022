@@ -45,11 +45,12 @@ const ContactForm = () => {
                 setSending(false)
                 setTimeout(() => {
                     setFormState({ name: '', email: '', message: '' })
-                }, 300)
+                }, 600)
             })
             .catch(err => {
                 setError(err.toString())
                 setIsError(true)
+                console.log(err)
             })
         e.preventDefault()
     }
@@ -80,7 +81,6 @@ const ContactForm = () => {
                         </div>
                     )
                 }
-                <input type="hidden" name="form-name" value="zacrogers.works" />
                 <motion.div variants={SECTION_VARIANTS.fadeUpElement} className="input-container">
                     <input className="contact-form-input" placeholder=" " type="name" id="name" name="name" onChange={handleChange} value={name}/>
                     <label htmlFor="name">Name</label>
