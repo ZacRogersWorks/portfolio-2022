@@ -4,6 +4,7 @@ import { getDarkModeFromStorage, setDarkModeToStorage } from '../../utilities/th
 import { getSection } from '../../utilities/getSection'
 
 
+const initialSection = 'hi'
 
 const getInitialState = () => {
   return {
@@ -43,7 +44,7 @@ const SiteContextProvider = ({children}) => {
   useEffect(() => {
 
     if (darkMode) document.body.classList.add('dark-mode')
-  }, [darkMode])
+  }, [])
 
   const darkModeTogglez = () => {
    if (document) {

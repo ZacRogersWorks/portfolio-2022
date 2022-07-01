@@ -4,6 +4,7 @@ import { Canvas } from '@react-three/fiber'
 import { Loader } from '@react-three/drei'
 import HeroScene from './HeroScene'
 import AboutScene from './AboutScene'
+import { useLocation } from '@reach/router'
 import { getSection } from '../../utilities/getSection'
 
 
@@ -11,6 +12,7 @@ export default function Background() {
     const canvasRef = useRef(null)
     const currentContext = useSiteContext()
     const [currentSection, setCurrentSection] = useState()
+    const location = useLocation()
 
     const loaderColors = {
         light: "#ffffff",
@@ -18,13 +20,21 @@ export default function Background() {
     }
 
     const chooseScene = () => {
+        // setTimeout(() => {
         const _section = getSection()
         if (_section === 'hero') {
             setCurrentSection(<HeroScene darkMode={currentContext.darkMode} />)
         }
+        // if (currentContext.section.visibleSection === 'hero') {
+        //     setCurrentSection(<HeroScene darkMode={currentContext.darkMode} />)
+        // }
+        // else if (location.pathname.startsWith('/projects/')) {
+        //     setCurrentSection(<AboutScene darkMode={currentContext.darkMode} section={currentContext.section.visibleSection} />)
+        // }
         else {
             setCurrentSection(<AboutScene darkMode={currentContext.darkMode} section={currentContext.section.visibleSection} />)
         }
+        // }, 0)
     }
 
     useEffect(() => {
