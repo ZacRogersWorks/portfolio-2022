@@ -27,7 +27,7 @@ section {
 
 @include breakpoints.md {
     section {
-        padding: 2.5rem 0;
+        padding: 1rem 0 2.5rem 0;
     }
 }
 
@@ -63,4 +63,12 @@ canvas {
 *:focus {
     outline: var(--focus-outline) 2px solid;
     box-shadow: 0 0 15px 2px var(--focus-outline);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: var(--color-text);
 }
