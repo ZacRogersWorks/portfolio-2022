@@ -80,7 +80,7 @@ const ContactForm = () => {
                         </div>
                     )
                 }
-                <input type="hidden" name="form-name" value="ZacRogers.Works" />
+                <input type="hidden" name="form-name" value="zacrogers.works" />
                 <motion.div variants={SECTION_VARIANTS.fadeUpElement} className="input-container">
                     <input className="contact-form-input" placeholder=" " type="name" id="name" name="name" onChange={handleChange} value={name}/>
                     <label htmlFor="name">Name</label>
