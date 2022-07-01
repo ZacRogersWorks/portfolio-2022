@@ -1,10 +1,8 @@
 import React from 'react'
-import Div100vh from 'react-div-100vh'
 import { SiteContextProvider } from './src/components/context/SiteContext'
 import { AnimatePresence } from 'framer-motion'
 import { MOTION_VARIANTS } from './src/variants/MOTION_VARIANTS'
 import { waitForElementToExist } from './src/utilities/waitForElementToExist'
-import { useSiteContext } from './src/components/context/SiteContext'
 
 import "@fontsource/space-mono"
 import "@fontsource/space-mono/700.css"

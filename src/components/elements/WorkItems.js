@@ -1,6 +1,5 @@
 import React from 'react'
 import { useWorkListQuery } from '../queries/useWorkListQuery'
-import numberToWords from 'number-to-words'
 import { Link } from 'gatsby'
 
 const WorkList = () => {

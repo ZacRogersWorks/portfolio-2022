@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
 
 const TransitionOverlay = () => {

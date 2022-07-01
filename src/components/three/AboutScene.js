@@ -1,14 +1,9 @@
 import React from 'react';
 import { Float, PerspectiveCamera } from '@react-three/drei'
-import { useEffect, useState } from 'react'
-import Bubble from './Bubble'
 import Gradient from './Gradient'
 import Model from './Model'
 
 import Bubbles from './Bubbles';
-
-
-import {UNIQUE_ID} from '../../utilities/UNIQUE_ID'
 
 const AboutScene = ({darkMode, section}) => {
     // const currentContext = useContext(SiteContext)
@@ -41,7 +36,7 @@ const AboutScene = ({darkMode, section}) => {
             <Float rotationIntensity={.2} floatIntensity={.1}>
                 <PerspectiveCamera makeDefault position={[0, 0, 20]} fov={50} near={1} far={20000} />
             </Float>
-               {(section == 'about') ? <Model /> : null}
+               {(section === 'about') ? <Model /> : null}
                <Bubbles />
                 {/* {
                     bubbles.filter(bubble => !!bubble ).map(bubble => {

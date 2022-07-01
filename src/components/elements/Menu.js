@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { Planet } from 'react-planet'
 
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
