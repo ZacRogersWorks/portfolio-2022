@@ -44,11 +44,6 @@ export default function Model(props) {
       setPosition([0, 0, 0])
       setScale(.050)
     }
-    //  else if (height > heightBreakpoint) {
-    //   setPosition([0, -1, 0])
-    //   setScale(.055)
-    //   setRotation(defaultRotation)
-    // }
   }, [width, height])
 
   useEffect(() => {

@@ -79,10 +79,3 @@ const Gradient = ({ darkMode }) => {
 }
 
 export default Gradient
-
-
-
-{/* <LayerMaterial color={16711422} name={"Flower"}>
-<Noise colorA={"#d4a63f"} colorB={"#00919d"} colorC={"#526c75"} colorD={"#86a4b0"} scale={0.1} offset={[-23.553420988748584,-23.553420988748584,603.7934500000197]} name={"noise"} />
-<Depth near={10} far={50} origin={[2.9917721268595967,9.541975662353474,0]} colorA={"#000000"} colorB={"#fef9fc"} alpha={0.63} mode={"softlight"} />
-</LayerMaterial> */}

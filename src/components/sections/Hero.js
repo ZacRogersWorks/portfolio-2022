@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 
 import Toggle from '../elements/Toggle'
 import { MOTION_VARIANTS } from '../../variants/MOTION_VARIANTS'
-import Div100vh from 'react-div-100vh'
 
 
 const Hero = forwardRef((props, ref) => {

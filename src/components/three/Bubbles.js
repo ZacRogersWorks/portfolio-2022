@@ -3,8 +3,6 @@ import { useFrame } from '@react-three/fiber'
 import { useEffect, useRef, useState } from 'react'
 import { Instance, Instances } from '@react-three/drei';
 
-const MOVE_SPEED = 5
-
 const randomChance = (odds = .5) => {
     return Math.random() <= odds
 }
@@ -27,23 +25,7 @@ const bubbleInstance = Array.from({ length: 20 }, () => bubbleProps())
 const Bubbles = () => {
     const ref = useRef()
     const [bubbleArray, setBubbleArray] = useState(bubbleInstance)
-
-    // useEffect(() => {
-    //     // setInterval(() => {
-    //         setBubbleArray(prev => {
-    //             let newArray = [...prev]
-    //             console.log('newArray', newArray)
-    //             newArray.push({
-    //                 radius: Math.random(),
-    //                 xPosition: rng(-15, 15),
-    //                 yPosition: ((Math.random() - .5) * 20) - 10,
-    //                 zPosition: rng(-5, 5)
-    //             })
-    //             return newArray
-    //         })
-    //     // })
-    // }, [])
-
+    
     return (
         <Instances limit={50} ref={ref} position={[0, 0, 0]}>
             <sphereGeometry args={[1, 12, 12]} />
