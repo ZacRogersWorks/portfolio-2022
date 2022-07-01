@@ -14,7 +14,6 @@ export const Seo = ({ description, keywords, title, image, url, author, data }) 
                 const metaImage = image || data.site.siteMetadata.image
                 const metaUrl = url || data.site.siteMetadata.url
                 const metaKeywords = keywords || ["web design for small businesses", "web development for small businesses", "threejs web development services", "interactive web development services", "seattle web developer", "web development packages"]
-                console.log('metadata', metaTitle)
                 return (
                     <Helmet title={metaTitle}
                         meta={[

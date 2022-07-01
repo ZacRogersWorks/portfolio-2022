@@ -70,7 +70,7 @@ const Bubbles = () => {
 
 const Bubble = ({ scale, xPosition, yPosition, zPosition }) => {
     const ref = useRef(null)
-    const MOVE_SPEED = (Math.random() * (5 - 3)) + 3;
+    const MOVE_SPEED = (Math.random() * (5 - 2.5)) + 2.5;
 
     useEffect(() => {
         ref.current.scale.x = scale
@@ -80,9 +80,11 @@ const Bubble = ({ scale, xPosition, yPosition, zPosition }) => {
         ref.current.position.y = yPosition
         ref.current.position.z = zPosition
         setInterval(() => {
-            ref.current.position.z = rng(-15, 15)
-            ref.current.position.y = ((Math.random() - .5) * 20) - 20
-            ref.current.position.z = rng(-5, 5)
+            if (ref.current.position != null) {
+                ref.current.position.z = rng(-15, 15)
+                ref.current.position.y = ((Math.random() - .5) * 20) - 20
+                ref.current.position.z = rng(-5, 5)
+            }
         },  (Math.random() * (18000 - 14000) + 14000));
     }, [])
 

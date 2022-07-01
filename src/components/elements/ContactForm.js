@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
+import SuccessCard from './SuccessCard'
+
 import { MOTION_VARIANTS, SECTION_VARIANTS } from '../../variants/MOTION_VARIANTS'
 
 const encode = (data) => {
@@ -31,7 +33,7 @@ const ContactForm = () => {
 
     const handleSubmit = (e) => {
         setSending(true)
-        const payload = encode({ "form-name": "cynthiacao.xyz", ...formState })
+        const payload = encode({ "form-name": "zacrogers.works", ...formState })
 
         fetch("/", {
             method: 'POST',
@@ -62,13 +64,14 @@ const ContactForm = () => {
             animate={motionControls}
         >
             <motion.p variants={SECTION_VARIANTS.fadeUpP}>Like what you see? Let's chat.</motion.p>
+            <SuccessCard setSent={setSent} sending={sending} sent={sent} />
             <motion.form
                 name="ZacRogers.Works"
                 data-netlify="true"
                 method="POST"
                 className="contact-form"
                 data-netlify-honeypot="bot-field"
-                onSubmit={""}
+                onSubmit={handleSubmit}
             >
                 {
                     isError && (
@@ -79,15 +82,15 @@ const ContactForm = () => {
                 }
                 <input type="hidden" name="form-name" value="ZacRogers.Works" />
                 <motion.div variants={SECTION_VARIANTS.fadeUpElement} className="input-container">
-                    <input className="contact-form-input" placeholder=" " type="name" id="name" name="name" />
+                    <input className="contact-form-input" placeholder=" " type="name" id="name" name="name" onChange={handleChange} value={name}/>
                     <label htmlFor="name">Name</label>
                 </motion.div>
                 <motion.div variants={SECTION_VARIANTS.fadeUpElement} className="input-container">
-                    <input className="contact-form-input" placeholder=" " type="email" id="email" name="email" />
+                    <input className="contact-form-input" placeholder=" " type="email" id="email" name="email" onChange={handleChange} value={email}/>
                     <label htmlFor="email">Email</label>
                 </motion.div>
                 <motion.div variants={SECTION_VARIANTS.fadeUpElement} className="input-container">
-                    <textarea className="contact-form-input" placeholder=" " id="message" name="message" />
+                    <textarea className="contact-form-input" placeholder=" " id="message" name="message" onChange={handleChange} value={message}/>
                     <label htmlFor="message">Message</label>
                 </motion.div>
                 <motion.button variants={SECTION_VARIANTS.fadeUpElement} className="submit-button" type="submit" >
