@@ -6,6 +6,9 @@ import { MOTION_VARIANTS } from './src/variants/MOTION_VARIANTS'
 import { waitForElementToExist } from './src/utilities/waitForElementToExist'
 import { useSiteContext } from './src/components/context/SiteContext'
 
+import "@fontsource/space-mono"
+import "@fontsource/space-mono/700.css"
+
 
 export const wrapRootElement = ({ element }) => {
     return (

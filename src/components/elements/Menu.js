@@ -22,11 +22,6 @@ const svgVariants = {
 
 
 const Menu = () => {
-    //Menu link refs
-    const homeRef = useRef(null);
-    const aboutRef = useRef(null);
-    const workRef = useRef(null);
-    const contactRef = useRef(null);
 
     const [isOpen, setIsOpen] = useState(false)
     const [icon, setIcon] = useState(
@@ -149,16 +144,16 @@ const Menu = () => {
                 onClick={handleOpen}
                 onClose={handleClose}
             >
-                <AnchorLink to="/#contact" className="menu-link contact" ref={contactRef} tabIndex="-4" onFocus={handleOpen} >
+                <AnchorLink to="/#contact" className="menu-link contact" tabIndex="-4" onFocus={handleOpen} >
                     Contact
                 </AnchorLink>
-                <AnchorLink to="/#work" className="menu-link work" ref={workRef} tabIndex="-3" onFocus={handleOpen} >
+                <AnchorLink to="/#work" className="menu-link work" tabIndex="-3" onFocus={handleOpen} >
                     Work
                 </AnchorLink>
-                <AnchorLink to="/#about" className="menu-link about" ref={aboutRef} tabIndex="-2" onFocus={handleOpen} >
+                <AnchorLink to="/#about" className="menu-link about" tabIndex="-2" onFocus={handleOpen} >
                     About
                 </AnchorLink>
-                <AnchorLink to="/#home" className="menu-link home" style={{ marginTop: '1rem' }} ref={homeRef} tabIndex="-1" onFocus={handleOpen} >
+                <AnchorLink to="/#home" className="menu-link home" style={{ marginTop: '1rem' }} tabIndex="-1" onFocus={handleOpen} >
                     Home
                 </AnchorLink>
                 <div></div>

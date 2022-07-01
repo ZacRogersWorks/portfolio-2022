@@ -1,0 +1,85 @@
+@use '../base/themes';
+@use '../base/typography';
+
+.success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  
+    &__inner {
+      position: absolute;
+      top: -20px;
+      transition: all 400ms ease-out;
+      border-radius: 20px;
+      padding-bottom: 2rem;
+      display: grid;
+      margin-bottom: 2rem;
+      background-color: var(--color-background);
+      place-items: center;
+      text-align: center;
+      min-height: 350px;
+      width: 100%;
+      border-width: 2px;
+      border-style: solid;
+      border-color: var(--focus-outline);
+      color: var(--color-text);
+      font-size: 0.85rem;
+      z-index: 100;
+      transform: translateY(0%);
+    }
+  
+    &__grid {
+      display: grid;
+      place-items: center;
+    }
+  
+  
+    &__emoji {
+      font-size: 2.25rem;
+    }
+  }
+  
+  .translateX180 {
+    transform: translateX(-200%);
+  }
+  
+  .translateX0 {
+    transform: translateX(0%);
+  }
+
+  .sent-btn {
+    align-self: flex-end;
+    padding: 8px;
+    width: 25%;
+    background-color: var(--color-text);
+    border: none;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // mix-blend-mode: screen;
+    color: var(--text-opposite);
+    font-family: kayak, sans-serif;
+    text-transform: lowercase;
+    font-size: 1rem;
+    letter-spacing: .25rem;
+    cursor: pointer;
+    transition-property: opacity, color, background-color;
+    transition-duration: .3s;
+    transition-timing-function: ease-out;
+
+    &:hover {
+        padding: 7px;
+        background-color: transparent;
+        mix-blend-mode: normal;
+        color: var(--color-text);
+        border: 1px solid var(--color-text);
+    
+    }
+
+    &:active {
+        background-color: var(--button-active);
+        transition-duration: .1s;
+    }
+  }
