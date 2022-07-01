@@ -32,6 +32,7 @@ const ContactForm = () => {
     const { name, email, message } = formState
 
     const handleSubmit = (e) => {
+        e.preventDefault()
         setSending(true)
         const payload = encode({ "form-name": "zacrogers.works", ...formState })
 
@@ -50,9 +51,9 @@ const ContactForm = () => {
             .catch(err => {
                 setError(err.toString())
                 setIsError(true)
-                console.log(err)
+                console.log('Contact form submission failed',err)
             })
-        e.preventDefault()
+        
     }
 
     const handleChange = e => setFormState(prevState => ({ ...prevState, [e.target.name]: e.target.value }))
@@ -72,7 +73,7 @@ const ContactForm = () => {
                 method="POST"
                 className="contact-form"
                 data-netlify-honeypot="bot-field"
-                onSubmit={handleSubmit}
+                // onSubmit={handleSubmit}
             >
                 {
                     isError && (
@@ -93,7 +94,7 @@ const ContactForm = () => {
                     <textarea className="contact-form-input" placeholder=" " id="message" name="message" onChange={handleChange} value={message}/>
                     <label htmlFor="message">Message</label>
                 </motion.div>
-                <motion.button variants={SECTION_VARIANTS.fadeUpElement} className="submit-button" type="submit" >
+                <motion.button variants={SECTION_VARIANTS.fadeUpElement} className="submit-button" type="submit" onClick={handleSubmit}>
                     Submit
                     <svg className="submit-arrow" xmlns="http://www.w3.org/2000/svg" width="18.752" height="18.277" viewBox="0 0 18.752 18.277">
                         <path fill="currentColor" id="Icon_awesome-arrow-right" data-name="Icon awesome-arrow-right" d="M7.973,3.871,8.9,2.942a1,1,0,0,1,1.419,0l8.136,8.132a1,1,0,0,1,0,1.419l-8.136,8.136a1,1,0,0,1-1.419,0L7.973,19.7a1.006,1.006,0,0,1,.017-1.436l5.043-4.8H1a1,1,0,0,1-1-1V11.116a1,1,0,0,1,1-1H13.033L7.99,5.307A1,1,0,0,1,7.973,3.871Z" transform="translate(0 -2.647)" />
