@@ -8,6 +8,7 @@ export const useWorkListQuery = () => {
             frontmatter {
               description
               date
+              title
             }
             slug
             id

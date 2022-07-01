@@ -50,14 +50,16 @@
 .project-title {
     margin-top: 7rem;
     text-align: right;
+    
 
     h1 {
         font-weight: lighter;
+        font-size: 3rem;
     }
 
     p {
-        margin-top: -1rem;
-        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        font-size: 1rem;
     }
 }
 
@@ -98,6 +100,7 @@
     text-align: right;
     font-family: "space mono", sans-serif;
     width: auto;
+    margin-top: 1rem;
 
     a {
         align-self: flex-end;
@@ -117,15 +120,20 @@
 }
 
 @include breakpoints.sm {
+    .project-section_frontmatter {
+        h1 {
+            font-size: 4rem;
+        }
+    }
     .project-section_body {
         h2 {
             font-size: 3rem;
         }
     }
 
-    // .project-body-vert-rule {
-    //     margin-top: calc(64px + 48px - 32px);
-    // }
+    .project-image {
+        
+    }
 }
 
 @include breakpoints.md {
@@ -152,7 +160,7 @@
     }
 
     .project-image {
-        top: 20%;
+        top: 13%;
         transform: translateX(-50%) scale(.8);
     }
 
@@ -160,7 +168,7 @@
 
 @include breakpoints.lg {
     .project-image {
-        top: 10%;
+        top: 5%;
         
     }
 }
@@ -168,6 +176,7 @@
 @include breakpoints.xl {
     .project-image {
         top: 50%;
+        left: 35%;
         transform: translate(-50%, -45%) scale(.9);
     }
 }
