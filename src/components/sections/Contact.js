@@ -19,7 +19,7 @@ const Contact = forwardRef((props, ref) => {
     }, [motionControls, sectionInView])
 
     return (
-        <section id={`${props.dataId}`} className="contact-section" ref={ref}>
+        <section id={`${props.dataId}`} className={`contact-section ${props.snap ? "snap" : null}`} ref={ref}>
             <motion.div className="contact-container"
                 ref={section}
                 variants={MOTION_VARIANTS.about}

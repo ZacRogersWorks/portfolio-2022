@@ -112,13 +112,28 @@ const Menu = () => {
         )
     }
 
+    const removeScrollSnap = () => {
+        const body = document.body
+        const html = document.documentElement
+
+        body.style.scrollSnapType = "none"
+        html.style.scrollSnapType = "none"
+        console.log(html.style.scrollSnapType)
+        setTimeout(() => {
+            body.style.scrollSnapType = "y mandatory"
+            html.style.scrollSnapType = "y mandatory"
+            console.log(html.style.scrollSnapType)
+            return
+        }, 5000)
+    }
+
     useEffect(() => {
         window.addEventListener('keydown', e => {
-         if(e.key === 'Escape'){
-          handleClose()
-         }
+            if (e.key === 'Escape') {
+                handleClose()
+            }
         })
-       })
+    })
 
     return (
         <div id="planet">
@@ -144,16 +159,16 @@ const Menu = () => {
                 onClick={handleOpen}
                 onClose={handleClose}
             >
-                <AnchorLink to="/#contact" className="menu-link contact" tabIndex="-4" onFocus={handleOpen} >
+                <AnchorLink to="/#contact" className="menu-link contact" tabIndex="-1" onAnchorLinkClick={removeScrollSnap} onFocus={handleOpen} striphash>
                     Contact
                 </AnchorLink>
-                <AnchorLink to="/#work" className="menu-link work" tabIndex="-3" onFocus={handleOpen} >
+                <AnchorLink to="/#work" className="menu-link work" tabIndex="-2" onAnchorLinkClick={removeScrollSnap} onFocus={handleOpen} striphash>
                     Work
                 </AnchorLink>
-                <AnchorLink to="/#about" className="menu-link about" tabIndex="-2" onFocus={handleOpen} >
+                <AnchorLink to="/#about" className="menu-link about" tabIndex="-3" onAnchorLinkClick={removeScrollSnap} onFocus={handleOpen} striphash>
                     About
                 </AnchorLink>
-                <AnchorLink to="/#home" className="menu-link home" style={{ marginTop: '1rem' }} tabIndex="-1" onFocus={handleOpen} >
+                <AnchorLink to="/#home" className="menu-link home" style={{ marginTop: '1rem' }} tabIndex="-4" onAnchorLinkClick={removeScrollSnap} onFocus={handleOpen} striphash>
                     Home
                 </AnchorLink>
                 <div></div>

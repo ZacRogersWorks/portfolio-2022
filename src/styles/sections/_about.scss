@@ -5,6 +5,7 @@
     height: 100vh;
     width: 100%;
     scroll-snap-align: start;
+    -webkit-scroll-snap-align: start;
     z-index: 2;
 
     .about-container {

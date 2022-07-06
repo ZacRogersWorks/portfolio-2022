@@ -7,8 +7,6 @@ const WorkList = () => {
     const queryList = useWorkListQuery()
     const workList = queryList.allMdx.nodes
 
-    console.log(workList)
-
     return (
         <ul className="work-list">
             {workList.map((project, i) => {

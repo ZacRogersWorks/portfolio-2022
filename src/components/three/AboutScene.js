@@ -1,11 +1,19 @@
 import React from 'react';
 import { Float, PerspectiveCamera } from '@react-three/drei'
+import { useTransform, useViewportScroll } from 'framer-motion';
 import Gradient from './Gradient'
 import Model from './Model'
 
 import Bubbles from './Bubbles';
 
 const AboutScene = ({darkMode, section}) => {
+
+    const { scrollYProgress } = useViewportScroll();
+    const yValue = useTransform(
+        scrollYProgress,
+        [.1, .25, .3],
+        [0, 1, 0]
+    )
     // const currentContext = useContext(SiteContext)
 
     
@@ -36,7 +44,9 @@ const AboutScene = ({darkMode, section}) => {
             <Float rotationIntensity={.2} floatIntensity={.1}>
                 <PerspectiveCamera makeDefault position={[0, 0, 20]} fov={50} near={1} far={20000} />
             </Float>
-               {(section === 'about') ? <Model /> : null}
+               {(section === 'about') ? <Model section={section}
+               /> 
+               : null}
                <Bubbles />
                 {/* {
                     bubbles.filter(bubble => !!bubble ).map(bubble => {

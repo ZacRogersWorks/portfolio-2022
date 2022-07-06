@@ -229,7 +229,7 @@ export const PROJECT_VARIANTS = {
             scaleY: 1,
             transition: {
                 duration: .5,
-                delay: 1.5,
+                delay: .7,
                 ease: "easeOut"
             }
         }

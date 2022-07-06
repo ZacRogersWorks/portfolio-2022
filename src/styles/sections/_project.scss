@@ -38,7 +38,6 @@
 .project-section_frontmatter {
     height: 100vh;
     max-height: 100vh;
-    scroll-snap-align: start;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -65,7 +64,6 @@
 
 .project-section_body {
     height: 100vh;
-    scroll-snap-align: start;
     position: relative;
     display: flex;
     flex-direction: column;
