@@ -2,11 +2,15 @@
 @use '../base/typography';
 @use '../base/breakpoints';
 
+.snap {
+    scroll-snap-align: start;
+    -webkit-scroll-snap-align: start;
+}
+
 .contact-section {
     padding-bottom: 2.5rem;
     height: 100vh;
     width: 100%;
-    scroll-snap-align: center;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -28,7 +32,6 @@
 }
 
 .contact-form-container {
-    padding: 0 .5rem;
     height: 100%;
     width: 100%;
     display: flex;
@@ -43,7 +46,7 @@
 }
 
 .contact-form {
-    
+    padding: 0 .5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -207,6 +210,10 @@
     .contact-form-container {
         width: 66%;
         align-self: flex-end;
+    }
+
+    .contact-form {
+        padding: 0 0;
     }
 }
 

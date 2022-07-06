@@ -12,7 +12,6 @@ export default function Background() {
     const canvasRef = useRef(null)
     const currentContext = useSiteContext()
     const [currentSection, setCurrentSection] = useState()
-    const location = useLocation()
 
     const loaderColors = {
         light: "#ffffff",

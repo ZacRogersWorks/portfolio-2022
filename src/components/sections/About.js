@@ -5,8 +5,6 @@ import { useInView } from 'react-intersection-observer'
 import { MOTION_VARIANTS, SECTION_VARIANTS } from '../../variants/MOTION_VARIANTS'
 
 
-
-
 const About = forwardRef((props, ref) => {
 
     const motionControls = useAnimation()

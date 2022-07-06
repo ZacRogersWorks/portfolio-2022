@@ -26,7 +26,7 @@ const Home = () => {
         <Hero ref={section.refs.hero} />
         <About ref={section.refs.about} />
         <Work ref={section.refs.work} />
-        <Contact ref={section.refs.contact} dataId={"contact"}/>
+        <Contact ref={section.refs.contact} dataId={"contact"} snap={true} />
       </Layout>
     </div>
   )

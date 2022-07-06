@@ -84,7 +84,7 @@ const Project = ({ data }) => {
           </motion.div>
         </motion.div>
       </article>
-      <Contact ref={currentContext?.section.refs.contact} dataId={"projectContact"}/>
+      <Contact ref={currentContext?.section.refs.contact} dataId={"projectContact"} snap={false} />
     </Layout>
   )
 }
