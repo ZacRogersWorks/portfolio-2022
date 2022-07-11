@@ -38,14 +38,11 @@ const About = forwardRef((props, ref) => {
                         variants={SECTION_VARIANTS.p}
                     >
                         <p className="about-text">
-                            I subscribe to a modernist design philosophy: distill the design to its most beautiful and basic utility,
-                            consider every use case, and use the highest quality
-                            materials available.
-                            <br />
-                            Every project I design is meant to be
-                            fast, easy to read, easy to use, and have a reference to nature.
+                            I'm a Seattle-based front end developer working on making websites and web apps beautiful,
+                            responsive, immersive, and accessible. I love to integrate music, 3d elements, and references to nature into my projects
+                            where appropriate. 
                             <br /><br />
-                            In my free time, you can find me consuming mass amounts of science fiction or
+                            In my free time, you can find me consuming unhealthy amounts of science fiction or
                             playing with <a title="Zac plays synths" href="https://www.youtube.com/channel/UCDzr_UKG-sC-xKXjslkDEbw" target="_blank" >
                                 synthesizers
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 40.5 36">
