@@ -22,20 +22,20 @@ const HeroScene = (props) => {
             <Environment
             
                 files={props.darkMode ? [
-                    '/nebula-cubemap/px.png',
-                    '/nebula-cubemap/nx.png',
-                    '/nebula-cubemap/py.png',
-                    '/nebula-cubemap/ny.png',
-                    '/nebula-cubemap/pz.png',
-                    '/nebula-cubemap/nz.png',
+                    '/nebula-cubemap/px.jpg',
+                    '/nebula-cubemap/nx.jpg',
+                    '/nebula-cubemap/py.jpg',
+                    '/nebula-cubemap/ny.jpg',
+                    '/nebula-cubemap/pz.jpg',
+                    '/nebula-cubemap/nz.jpg',
                 ] :
                     [
-                        '/sky-cubemap/px.png',
-                        '/sky-cubemap/nx.png',
-                        '/sky-cubemap/py.png',
-                        '/sky-cubemap/ny.png',
-                        '/sky-cubemap/pz.png',
-                        '/sky-cubemap/nz.png',
+                        '/sky-cubemap/px.jpg',
+                        '/sky-cubemap/nx.jpg',
+                        '/sky-cubemap/py.jpg',
+                        '/sky-cubemap/ny.jpg',
+                        '/sky-cubemap/pz.jpg',
+                        '/sky-cubemap/nz.jpg',
                     ]}
 
                 resolution={256} background />
