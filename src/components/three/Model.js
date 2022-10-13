@@ -20,7 +20,7 @@ export default function Model(props) {
 
 
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/me-swimming-test.glb");
+  const { nodes, materials, animations } = useGLTF("/me-swimming.glb");
   const { actions } = useAnimations(animations, group);
 
   const [width, setWidth] = useState(window?.innerWidth);
@@ -173,4 +173,4 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload("/me-swimming-test.glb");
+useGLTF.preload("/me-swimming.glb");
