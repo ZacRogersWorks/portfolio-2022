@@ -40,7 +40,7 @@ const About = forwardRef((props, ref) => {
                         <p className="about-text">
                             I'm a Seattle-based front end developer working on making websites and web apps beautiful,
                             responsive, immersive, and accessible. I love to integrate music, 3d elements, and references to nature into my projects
-                            where appropriate. 
+                            where appropriate. Currently working as a lead designer and front-end engineer at Serendum Studios.
                             <br /><br />
                             In my free time, you can find me consuming unhealthy amounts of science fiction or
                             playing with <a title="Zac plays synths" href="https://www.youtube.com/channel/UCDzr_UKG-sC-xKXjslkDEbw" target="_blank" >
